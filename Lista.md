@@ -109,11 +109,11 @@ Os quatro integrantes responsáveis pelas apresentações são Diogo, Gregori, G
 
 | Bloco | Horário | Dupla |
 | --- | --- | --- |
-| A | 9h00–10h30 | Diogo e Gregori |
-| B | 10h30–12h00 | Gabriel e Guilherme |
+| A | 9h00–10h30 | Diogo e Gabriel |
+| B | 10h30–12h00 | Gregori e Guilherme |
 | Intervalo | 12h00–13h30 | — |
-| C | 13h30–15h30 | Diogo e Guilherme |
-| D | 15h30–17h30 | Gregori e Gabriel |
+| C | 13h30–15h30 | gregori e Guilherme |
+| D | 15h30–17h30 | Diogo e Gabriel |
 
 Cada um dos quatro apresentadores participa de dois blocos, totalizando **3h30 de apresentação por pessoa**. Em cada bloco, a dupla pode dividir as funções: uma pessoa contextualiza o conteúdo e a outra navega pelo site e demonstra a interação; os papéis podem ser alternados durante o turno.
 
