@@ -1,0 +1,54 @@
+LISTA DO QUE VAMOS PRECISAR PARA APRESENTAR
+
+Projeto: Das oficinas artesanais à robótica industrial
+Equipe: Diogo, Gregori, Gabriel, Guilherme e Joe
+
+1. EQUIPAMENTOS PRINCIPAIS
+
+[ ] Computador ou notebook para abrir o site.
+[ ] Projetor, televisão ou monitor grande.
+[ ] Cabo HDMI ou VGA.
+[ ] Adaptador para conectar o notebook ao projetor, se necessário.
+[ ] Extensão elétrica e filtro de linha.
+[ ] Carregador do notebook.
+[ ] Mouse para facilitar a navegação pelo site.
+[ ] Celular ou tablet para mostrar que o site funciona em diferentes telas.
+
+2. ARQUIVOS NECESSÁRIOS
+
+[ ] Site completo em HTML, CSS e JavaScript.
+[ ] Link do site publicado.
+[ ] Cópia dos arquivos em um pendrive.
+[ ] Cópia de segurança em algum serviço on-line.
+[ ] Versão offline do site para o caso de a internet não funcionar.
+[ ] Arquivo com as imagens e referências utilizadas.
+[ ] Quiz funcionando e pronto para ser demonstrado.
+
+3. MATERIAIS DE APOIO
+
+[ ] Roteiro da apresentação.
+[ ] Lista com a divisão das falas.
+[ ] Resumo das quatro Revoluções Industriais.
+[ ] As seis perguntas do quiz e suas respostas.
+[ ] Lista das fontes pesquisadas.
+[ ] Papel e caneta para anotar perguntas ou observações.
+[ ] Cartaz com o título do trabalho, caso seja necessário.
+
+4. DIVISÃO DURANTE A APRESENTAÇÃO
+
+[ ] Gabriel e Guilherme: apresentação da manhã, das 9h às 12h.
+[ ] Gregori e Diogo: apresentação da tarde, das 13h30 às 17h30.
+[ ] Joe: responsável pelo site e por garantir que o site, o quiz e a cópia de segurança estejam funcionando.
+
+5. ANTES DE COMEÇAR
+
+[ ] Testar o computador e o projetor.
+[ ] Conferir se todos os cabos e adaptadores funcionam.
+[ ] Abrir o site e verificar se todas as imagens aparecem.
+[ ] Testar os botões, a linha do tempo e o quiz.
+[ ] Conferir se o texto está visível no projetor.
+[ ] Deixar o site aberto na página inicial.
+[ ] Testar a versão offline.
+[ ] Ensaiar a apresentação.
+[ ] Dividir quem falará em cada parte.
+[ ] Chegar com antecedência ao local da apresentação.
