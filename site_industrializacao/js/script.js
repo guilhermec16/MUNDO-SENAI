@@ -4,6 +4,8 @@
    2) Banner interativo da página inicial (index.html)
    ============================================================ */
 
+document.documentElement.classList.add("js");
+
 /* ---------- 1) Filtros da linha do tempo ---------- */
 document.addEventListener("DOMContentLoaded", () => {
   const filtros = document.querySelectorAll(".filtro");
@@ -14,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const filtro = botao.dataset.filtro;
     etapas.forEach(etapa => {
       etapa.hidden = !(filtro === "todos" || etapa.dataset.etapa === filtro);
+      if (!etapa.hidden) etapa.classList.add("visivel");
     });
   }));
 });
@@ -25,7 +28,7 @@ const modelos = [
   {
     id: "antes",
     rotulo: "Antes das máquinas",
-    cor: "#ffd37a",
+    cor: "#ffd23f",
     x: "5%", y: "15%",
     arte: `<svg ${SVG_ATTR}>
       <path d="M22 66h60c7 0 12-5 14-12H38c-7 0-11 5-16 12z" fill="currentColor" fill-opacity=".18"/>
@@ -37,17 +40,17 @@ const modelos = [
     subtitulo: "Oficinas e manufaturas",
     titulo: "Antes das máquinas",
     texto: "Artesãos fabricavam produtos com ferramentas manuais, em oficinas ou em casa. Muitos dominavam várias etapas do trabalho, do início ao acabamento. Nas manufaturas, as tarefas começaram a ser divididas entre trabalhadores, mas a produção ainda dependia da força humana.",
-    destaques: [["Energia", "Força humana, animal, água e vento"], ["Organização", "Oficinas e manufaturas"], ["Limite", "Produção pequena e lenta"]],
+    destaques: [["Energia","Força humana, animal, água e vento"],["Organização","Oficinas e manufaturas"],["Limite","Produção pequena e lenta"]],
     tecnologia: "Ferramentas manuais, teares manuais, moinhos de água e de vento.",
     trabalho: "Aprendizes, oficiais e mestres. Em muitas cidades, as corporações de ofício organizavam as profissões.",
     impacto: "O crescimento do comércio aumentou a procura por mercadorias e criou as condições para a industrialização.",
-    marcos: ["Artesanato", "Manufaturas", "Corporações de ofício"],
-    link: ["conteudo.html", "Ver na linha do tempo ↗"]
+    marcos: ["Artesanato","Manufaturas","Corporações de ofício"],
+    link: ["conteudo.html","Ver na linha do tempo ↗"]
   },
   {
     id: "rev1",
     rotulo: "Revolução Industrial 1",
-    cor: "#ff9a63",
+    cor: "#ff8a3d",
     x: "22%", y: "50%",
     arte: `<svg ${SVG_ATTR}>
       <rect x="14" y="48" width="62" height="26" rx="11" fill="currentColor" fill-opacity=".16"/>
@@ -62,17 +65,17 @@ const modelos = [
     subtitulo: "A era do vapor",
     titulo: "1ª Revolução Industrial",
     texto: "Começou na Grã-Bretanha e transformou a produção artesanal em produção mecanizada nas fábricas. A máquina a vapor, o carvão e a indústria têxtil mudaram o ritmo do trabalho e a paisagem das cidades.",
-    destaques: [["Onde começou", "Grã-Bretanha"], ["Energia", "Carvão e vapor"], ["Setor-chave", "Indústria têxtil"]],
+    destaques: [["Onde começou","Grã-Bretanha"],["Energia","Carvão e vapor"],["Setor-chave","Indústria têxtil"]],
     tecnologia: "Máquina a vapor, carvão, máquinas de fiar e tecer, locomotiva a vapor.",
     trabalho: "Migração do campo para as cidades, jornadas longas, baixos salários e trabalho infantil. O ludismo foi um protesto contra certas máquinas.",
     impacto: "A produção cresceu muito, mas surgiram conflitos sobre salários, segurança e condições de vida dos trabalhadores.",
-    marcos: ["Máquina a vapor de Watt", "Ferrovias", "Ludismo (c. 1811–1816)"],
-    link: ["conteudo.html", "Ver na linha do tempo ↗"]
+    marcos: ["Máquina a vapor de Watt","Ferrovias","Ludismo (c. 1811–1816)"],
+    link: ["conteudo.html","Ver na linha do tempo ↗"]
   },
   {
     id: "rev2",
     rotulo: "Revolução Industrial 2",
-    cor: "#c9f36b",
+    cor: "#c6ff4a",
     x: "41%", y: "8%",
     arte: `<svg ${SVG_ATTR}>
       <path d="M46 76c-9-6-13-15-13-25a27 27 0 0 1 54 0c0 10-4 19-13 25v8H46z" fill="currentColor" fill-opacity=".14"/>
@@ -84,17 +87,17 @@ const modelos = [
     subtitulo: "A era da eletricidade",
     titulo: "2ª Revolução Industrial",
     texto: "Eletricidade, petróleo e aço transformaram fábricas, transportes e comunicações. A linha de montagem permitiu produzir grandes quantidades de mercadorias padronizadas, e o trabalho ficou mais intenso e organizado.",
-    destaques: [["Energia", "Eletricidade e petróleo"], ["Material", "Aço"], ["Método", "Linha de montagem"]],
+    destaques: [["Energia","Eletricidade e petróleo"],["Material","Aço"],["Método","Linha de montagem"]],
     tecnologia: "Lâmpada elétrica, motor a combustão, telefone, telégrafo, aço e produtos químicos.",
     trabalho: "O taylorismo organizava e media as tarefas; o fordismo ampliou a produção em massa. Algumas funções se tornaram repetitivas.",
     impacto: "Sindicatos e movimentos de trabalhadores pressionaram por salários melhores, jornadas menores e direitos.",
-    marcos: ["Lâmpada incandescente (1879)", "Ford Modelo T (1908)", "Taylor e Ford"],
-    link: ["conteudo.html", "Ver na linha do tempo ↗"]
+    marcos: ["Lâmpada incandescente (1879)","Ford Modelo T (1908)","Taylor e Ford"],
+    link: ["conteudo.html","Ver na linha do tempo ↗"]
   },
   {
     id: "rev3",
     rotulo: "Revolução Industrial 3",
-    cor: "#8fd8e0",
+    cor: "#33e1ff",
     x: "58%", y: "48%",
     arte: `<svg ${SVG_ATTR}>
       <rect x="22" y="96" width="50" height="10" rx="3" fill="currentColor" fill-opacity=".2"/>
@@ -109,17 +112,17 @@ const modelos = [
     subtitulo: "A era digital e da automação",
     titulo: "3ª Revolução Industrial",
     texto: "A eletrônica, os computadores e as telecomunicações mudaram a indústria. Máquinas programáveis e robôs passaram a executar tarefas repetitivas ou perigosas com mais precisão, e o conhecimento técnico ganhou importância.",
-    destaques: [["Tecnologia", "Eletrônica e computadores"], ["Método", "Automação"], ["Desafio", "Qualificação profissional"]],
+    destaques: [["Tecnologia","Eletrônica e computadores"],["Método","Automação"],["Desafio","Qualificação profissional"]],
     tecnologia: "Transistor, computadores, controladores programáveis, robôs industriais e internet.",
     trabalho: "O toyotismo valorizou flexibilidade, redução de desperdícios e melhoria contínua. Algumas profissões foram transformadas ou substituídas.",
     impacto: "A produtividade aumentou, e aprender novas habilidades passou a ser parte da vida profissional.",
-    marcos: ["Robô industrial Unimate (1961)", "Computadores pessoais", "Toyotismo"],
-    link: ["conteudo.html", "Ver na linha do tempo ↗"]
+    marcos: ["Robô industrial Unimate (1961)","Computadores pessoais","Toyotismo"],
+    link: ["conteudo.html","Ver na linha do tempo ↗"]
   },
   {
     id: "rev4",
     rotulo: "Revolução Industrial 4",
-    cor: "#b8a0ff",
+    cor: "#a07bff",
     x: "77%", y: "12%",
     arte: `<svg ${SVG_ATTR}>
       <rect x="38" y="38" width="44" height="44" rx="7" fill="currentColor" fill-opacity=".14"/>
@@ -132,17 +135,17 @@ const modelos = [
     subtitulo: "A era dos sistemas conectados",
     titulo: "4ª Revolução Industrial",
     texto: "Inteligência artificial, internet das coisas, sensores e robótica avançada conectam máquinas, dados e sistemas. Fábricas inteligentes acompanham processos em tempo real e identificam falhas com mais rapidez.",
-    destaques: [["Tecnologia", "IA, IoT e sensores"], ["Oportunidade", "Novas profissões"], ["Desafio", "Uso responsável"]],
+    destaques: [["Tecnologia","IA, IoT e sensores"],["Oportunidade","Novas profissões"],["Desafio","Uso responsável"]],
     tecnologia: "Inteligência artificial, internet das coisas, computação em nuvem, robôs colaborativos e gêmeos digitais.",
     trabalho: "Surgem trabalho remoto, serviços por aplicativo e funções ligadas a dados. Muitas tarefas mudam e exigem atualização constante.",
     impacto: "Educação, proteção social e direitos trabalhistas ajudam a distribuir melhor os benefícios e a lidar com privacidade e desigualdade.",
-    marcos: ["Indústria 4.0 (termo de 2011)", "Internet das coisas", "Inteligência artificial"],
-    link: ["conteudo.html", "Ver na linha do tempo ↗"]
+    marcos: ["Indústria 4.0 (termo de 2011)","Internet das coisas","Inteligência artificial"],
+    link: ["conteudo.html","Ver na linha do tempo ↗"]
   },
   {
     id: "brasil",
     rotulo: "Indústria no Brasil",
-    cor: "#ff876e",
+    cor: "#ff4f9a",
     x: "81%", y: "52%",
     arte: `<svg ${SVG_ATTR}>
       <path d="M14 100V62l20 12V62l20 12V62l20 12V100z" fill="currentColor" fill-opacity=".15"/>
@@ -155,12 +158,12 @@ const modelos = [
     subtitulo: "Industrialização nacional",
     titulo: "A indústria no Brasil",
     texto: "A industrialização brasileira ganhou força no século XX. Com Getúlio Vargas, houve incentivo à indústria de base, como a Companhia Siderúrgica Nacional. Depois de 1950, a indústria automobilística cresceu e novas fábricas chegaram ao país.",
-    destaques: [["Marco", "Indústria de base"], ["Expansão", "Setor automobilístico"], ["Questão atual", "Desenvolvimento desigual"]],
+    destaques: [["Marco","Indústria de base"],["Expansão","Setor automobilístico"],["Questão atual","Desenvolvimento desigual"]],
     tecnologia: "Siderurgia, petróleo, automóveis e, mais recentemente, aviação e indústria digital.",
     trabalho: "Cidades cresceram e muitas pessoas migraram do campo e de outras regiões para os polos industriais.",
     impacto: "O processo foi desigual entre regiões. Hoje o país combina setores modernos com desafios de infraestrutura, investimento e formação profissional.",
-    marcos: ["CSN (Volta Redonda)", "Era Vargas", "Indústria automobilística"],
-    link: ["conteudo.html#brasil", "Ver o Brasil na linha do tempo ↗"]
+    marcos: ["CSN (Volta Redonda)","Era Vargas","Indústria automobilística"],
+    link: ["conteudo.html#brasil","Ver o Brasil na linha do tempo ↗"]
   }
 ];
 
@@ -271,4 +274,78 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   estado("inicio");
+});
+
+
+/* ---------- 3) Efeitos de vida: entrada ao rolar, números, brilho do mouse, cartões que viram ---------- */
+document.addEventListener("DOMContentLoaded", () => {
+  const reduzir = window.matchMedia("(prefers-reduced-motion:reduce)").matches;
+
+  /* entrada ao rolar */
+  document.querySelectorAll(".card,.etapa,.bloco-intro,.equipe-faixa,.reflexao-final,.fontes,.titulo-conteudo,.filtros,.palco").forEach((el, i) => {
+    el.classList.add("revelar");
+    if (el.matches(".card")) el.style.setProperty("--atraso", `${(i % 3) * 110}ms`);
+  });
+  const alvos = document.querySelectorAll(".revelar");
+  if ("IntersectionObserver" in window && !reduzir) {
+    const obs = new IntersectionObserver(entradas => {
+      entradas.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        el.classList.add("visivel");
+        obs.unobserve(el);
+        /* depois da animação, devolve o controle do hover ao CSS de cada elemento */
+        setTimeout(() => el.classList.remove("revelar", "visivel"), 1200);
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+    alvos.forEach(el => obs.observe(el));
+  } else {
+    alvos.forEach(el => el.classList.remove("revelar"));
+  }
+
+  /* contadores */
+  const contar = (el) => {
+    const alvo = Number(el.dataset.alvo), suf = el.dataset.sufixo || "";
+    if (reduzir || !alvo) { el.textContent = alvo + suf; return; }
+    const ini = performance.now(), dur = 1400;
+    const passo = (t) => {
+      const p = Math.min(1, (t - ini) / dur), v = Math.round(alvo * (1 - Math.pow(1 - p, 3)));
+      el.textContent = v + suf;
+      if (p < 1) requestAnimationFrame(passo);
+    };
+    requestAnimationFrame(passo);
+  };
+  const numeros = document.querySelectorAll(".stat b[data-alvo]");
+  if (numeros.length && "IntersectionObserver" in window) {
+    numeros.forEach(n => { n.textContent = "0" + (n.dataset.sufixo || ""); });
+    const obsN = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { contar(e.target); obsN.unobserve(e.target); }
+    }), { threshold: 0.6 });
+    numeros.forEach(n => obsN.observe(n));
+  }
+
+  /* brilho que segue o mouse (fundo e cartões) */
+  if (window.matchMedia("(hover:hover)").matches && !reduzir) {
+    let quadro = null;
+    document.addEventListener("pointermove", e => {
+      if (quadro) return;
+      quadro = requestAnimationFrame(() => {
+        quadro = null;
+        document.documentElement.style.setProperty("--cx", `${e.clientX}px`);
+        document.documentElement.style.setProperty("--cy", `${e.clientY}px`);
+        const alvo = e.target.closest && e.target.closest(".card,.etapa-conteudo");
+        if (alvo) {
+          const r = alvo.getBoundingClientRect();
+          alvo.style.setProperty("--mx", `${e.clientX - r.left}px`);
+          alvo.style.setProperty("--my", `${e.clientY - r.top}px`);
+        }
+      });
+    });
+  }
+
+  /* cartões "Você sabia?" */
+  document.querySelectorAll(".flip").forEach(c => c.addEventListener("click", () => {
+    const virado = c.classList.toggle("virado");
+    c.setAttribute("aria-pressed", String(virado));
+  }));
 });

@@ -8,7 +8,6 @@ Extraia o ZIP e abra `index.html` em um navegador atualizado.
 ## Páginas
 - `index.html`: início e navegação do projeto.
 - `conteudo.html`: linha do tempo com filtros interativos por período.
-- `quiz.html`: quiz de 10 perguntas, progresso, pontuação e correção automática.
 
 ## Tecnologias
 HTML, CSS e JavaScript. A tipografia personalizada usa Google Fonts; se estiver sem internet, o navegador usa fontes alternativas.
