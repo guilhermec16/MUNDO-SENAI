@@ -9,7 +9,7 @@ Equipe: Diogo, Gregori, Gabriel, Guilherme e Joe
 [ ] 4 Projetor.
 [ ] 4 Cabo HDMI.
 [ ] 6 Extensões elétrica.
-[ ] 8 Mesa para computador
+[ ] 9 Mesas para computador
 
 2. ARQUIVOS NECESSÁRIOS
 
