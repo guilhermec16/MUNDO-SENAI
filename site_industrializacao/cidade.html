@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cidade em Revolução — Minigame</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topo"><a class="marca" href="index.html"><span class="marca-icone">◈</span> TRABALHO<span class="marca-claro">.FUTURO</span></a><nav><a href="index.html">Início</a><a href="conteudo.html">Linha do tempo</a><a class="selecionado" href="cidade.html">Minigame</a></nav></header>
+<main class="conteudo-main jogo-main">
+  <section class="titulo-conteudo">
+    <p class="sobrelinha">MINIGAME</p>
+    <h1>Cidade em<br>revolução<span>.</span></h1>
+    <p>Construa uma cidade e leve-a das oficinas artesanais até a era da inteligência artificial. Cada escolha afeta empregos, energia, poluição e o bem-estar das pessoas.</p>
+  </section>
+
+  <section class="jogo" id="jogo" aria-label="Minigame Cidade em Revolução">
+    <div class="hud" id="hud">
+      <div class="chip chip-cap"><span>💰 CAPITAL</span><b id="h-cap">0</b><small id="h-liq" class="pos">+0/turno</small></div>
+      <div class="chip"><span>👥 HABITANTES</span><b id="h-pop">0 / 0</b><small>população / moradias</small></div>
+      <div class="chip" id="c-emp"><span>👷 EMPREGOS</span><b id="h-emp">0 / 0</b><small>ocupados / vagas</small></div>
+      <div class="chip" id="c-ene" hidden><span>⚡ ENERGIA</span><b id="h-ene">0 / 0</b><small>oferta / demanda</small></div>
+      <div class="chip" id="c-qual" hidden><span>🎓 QUALIFICAÇÃO</span><b id="h-qual">0 / 0</b><small>oferecida / exigida</small></div>
+      <div class="chip" id="c-pol"><span>🌫️ POLUIÇÃO</span><b id="h-pol">0</b><small>quanto menor, melhor</small></div>
+      <div class="chip chip-bem"><span>😊 BEM-ESTAR</span><b id="h-bem">50%</b><div class="barra"><i id="h-bar"></i></div></div>
+    </div>
+
+    <div class="jogo-grid">
+      <div class="cena">
+        <div class="cv-wrap" id="cv-wrap">
+          <canvas id="cidade" width="940" height="600" aria-label="Cidade isométrica interativa. Escolha uma construção e clique em um terreno para construir."></canvas>
+          <div class="aviso" id="aviso" role="status" aria-live="polite"></div>
+          <div class="controles" role="group" aria-label="Velocidade do jogo">
+            <button class="vel" data-v="0" type="button" title="Pausar (espaço)">⏸</button>
+            <button class="vel" data-v="1" type="button">1x</button>
+            <button class="vel" data-v="2" type="button">2x</button>
+            <button class="vel" data-v="4" type="button">4x</button>
+          </div>
+          <div class="sobreposicao" id="intro">
+            <div class="modal-caixa">
+              <span class="modal-emoji">🏭</span>
+              <p class="modal-tag">COMO JOGAR</p>
+              <h3>Você é o(a) prefeito(a) da cidade</h3>
+              <ol class="como-jogar">
+                <li><b>Escolha</b> uma construção na lista ao lado e <b>clique em um terreno</b> para construir.</li>
+                <li>Gere <b>moradias e empregos</b> para atrair habitantes, e capital para investir.</li>
+                <li>Cuide da <b>energia, da poluição e da qualificação</b>: máquinas sem energia ou sem trabalhadores preparados rendem menos.</li>
+                <li>Cumpra os <b>objetivos da era</b> e avance pelas cinco etapas da industrialização.</li>
+              </ol>
+              <div class="modal-opcoes">
+                <button class="modal-op" id="btn-novo" type="button"><b>Começar nova cidade</b><span>Era: antes das máquinas</span></button>
+                <button class="modal-op" id="btn-continuar" type="button" hidden><b>Continuar jogo salvo</b><span>Seu progresso fica salvo neste navegador</span></button>
+              </div>
+            </div>
+          </div>
+          <div class="sobreposicao" id="evento" hidden></div>
+          <div class="sobreposicao" id="final" hidden></div>
+        </div>
+        <p class="dica-jogo">Dica: passe o mouse nas construções para ler curiosidades históricas. Tecla <kbd>Esc</kbd> cancela a seleção e <kbd>Espaço</kbd> pausa.</p>
+      </div>
+
+      <aside class="lateral">
+        <div class="era-card" id="era-card">
+          <div class="era-topo"><span class="era-prog" id="era-prog">Era 1 de 5</span><button class="reiniciar" id="reiniciar" type="button">↺ Reiniciar</button></div>
+          <h2 id="era-nome">Antes das máquinas</h2>
+          <p class="era-periodo" id="era-periodo">até c. 1760</p>
+          <h4>Objetivos para avançar</h4>
+          <ul class="objs" id="objs"></ul>
+          <button class="botao principal" id="avancar" type="button" disabled>Avançar</button>
+        </div>
+        <div class="info-card" id="info" aria-live="polite"></div>
+        <div class="paleta" id="paleta" aria-label="Construções disponíveis"></div>
+        <div class="diario-card"><h4>Notícias da cidade</h4><ul class="diario" id="diario"></ul></div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="aprende">
+    <div class="secao-titulo"><div><p class="sobrelinha">POR TRÁS DO JOGO</p><h2>O que cada decisão ensina</h2></div></div>
+    <div class="aprende-grid">
+      <article class="aprende-card" style="--cor:var(--orange)"><span>⚡</span><h3>Energia move a indústria</h3><p>Do carvão do vapor à eletricidade e às fontes renováveis, cada revolução teve uma nova base de energia. Sem energia suficiente, as máquinas desaceleram.</p></article>
+      <article class="aprende-card" style="--cor:var(--cyan)"><span>🎓</span><h3>Tecnologia exige qualificação</h3><p>Robôs e sistemas digitais precisam de pessoas preparadas. Sem formação e requalificação, a automação rende menos e o desemprego pode crescer.</p></article>
+      <article class="aprende-card" style="--cor:var(--pink)"><span>🌳</span><h3>Produzir também tem custo</h3><p>Fábricas trouxeram crescimento, mas também poluição e moradias precárias. Cidades equilibradas combinam produção, meio ambiente e qualidade de vida.</p></article>
+    </div>
+  </section>
+</main>
+<footer><span>TRABALHO.FUTURO</span><span>Projeto escolar • Máquinas e relações de trabalho</span><a href="conteudo.html">Ver a linha do tempo ↑</a></footer>
+<script src="script.js" defer></script>
+<script src="cidade.js" defer></script>
+</body>
+</html>
