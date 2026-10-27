@@ -5,14 +5,11 @@ Equipe: Diogo, Gregori, Gabriel, Guilherme e Joe
 
 1. EQUIPAMENTOS PRINCIPAIS
 
-[ ] Computador ou notebook para abrir o site.
-[ ] Projetor, televisão ou monitor grande.
-[ ] Cabo HDMI ou VGA.
-[ ] Adaptador para conectar o notebook ao projetor, se necessário.
-[ ] Extensão elétrica e filtro de linha.
-[ ] Carregador do notebook.
-[ ] Mouse para facilitar a navegação pelo site.
-[ ] Celular ou tablet para mostrar que o site funciona em diferentes telas.
+[ ] 1 Computador para abrir o site.
+[ ] 1 Projetor.
+[ ] 1 Cabo HDMI.
+[ ] 2 Extensões elétrica.
+[ ] 1 Mesa para computador
 
 2. ARQUIVOS NECESSÁRIOS
 
