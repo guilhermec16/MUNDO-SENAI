@@ -36,6 +36,7 @@ Equipe: Diogo, Gregori, Gabriel, Guilherme e Joe
 [ ] Gregori e Guilherme: apresentação da manhã, das 8h00 às 12h00.
 [ ] Gabriel e DIogo: apresentação da manhã, das 13h às 17h.
 Joe: Imprimir Os Certificados
+Diogo: Bala e pirulito
 
 
 5. ANTES DE COMEÇAR
