@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>As quatro Revoluções Industriais</title>
+<style>
+:root{--bg:#0b1118;--bg2:#141d28;--tx:#e8eef4;--mu:#93a3b4;--c:#46d3ff;--cu:#d98b4a;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--tx);font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif}
+body{min-height:100vh;background:radial-gradient(ellipse at 50% 30%,#1b2a3a 0,var(--bg) 65%);overflow-x:hidden}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--c);outline-offset:3px}
+section{display:none;min-height:100vh;padding:20px 16px;position:relative}
+section.on{display:flex;flex-direction:column;align-items:center}
+.glow{position:fixed;inset:0;pointer-events:none;background:radial-gradient(260px circle at var(--mx,50%) var(--my,40%),rgba(70,211,255,.13),transparent 70%)}
+/* intro */
+#intro{justify-content:center;text-align:center;gap:10px}
+#scene{width:min(560px,92vw);perspective:900px}
+#mach{width:100%;transition:transform .15s;transform-style:preserve-3d;animation:in 1.4s ease both}
+.spin{transform-box:fill-box;transform-origin:center;animation:rot 18s linear infinite}.rev{animation-direction:reverse;animation-duration:11s}
+@keyframes rot{to{transform:rotate(360deg)}}
+@keyframes in{from{opacity:0;transform:translateY(30px) scale(.94)}}
+h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(26px,5vw,44px);margin:6px 0;letter-spacing:.5px;font-weight:700}
+.lead{color:var(--mu);max-width:560px;margin:0 0 12px;line-height:1.5}
+#go{font-weight:700;letter-spacing:1px;font-size:clamp(14px,3.4vw,18px);padding:18px 30px;border-radius:999px;border:2px solid var(--c);background:linear-gradient(135deg,#0e3a4d,#12222f);box-shadow:0 0 28px rgba(70,211,255,.45);animation:pulse 2.6s ease-in-out infinite;transition:transform .2s,box-shadow .2s}
+#go:hover{transform:scale(1.06);box-shadow:0 0 48px rgba(70,211,255,.8)}
+#go:active{transform:scale(.96)}
+@keyframes pulse{50%{box-shadow:0 0 52px rgba(70,211,255,.75)}}
+/* stage */
+.top{width:100%;max-width:1200px;display:flex;align-items:center;gap:12px;min-height:44px}
+.top h2{margin:0;font-size:clamp(15px,3vw,20px);font-weight:600}
+.back{border:1px solid #33465a;background:#101a24;border-radius:10px;padding:8px 12px;font-size:14px;color:var(--mu)}
+.back:hover{color:var(--tx);border-color:var(--c)}
+.prog{margin-left:auto;font-size:13px;color:var(--mu);text-align:right}
+.bar{width:120px;height:5px;border-radius:5px;background:#243445;margin-top:4px;overflow:hidden}.bar i{display:block;height:100%;width:0;background:var(--c);transition:width .5s}
+.note{color:var(--mu);font-size:13px;margin:4px 0 0;max-width:640px;text-align:center}
+.grid{width:100%;max-width:1200px;display:grid;grid-template-columns:1fr;gap:16px;justify-items:center;align-items:start;flex:1}
+@media(min-width:900px){.grid.open{grid-template-columns:1fr 400px}}
+#orb{position:relative;width:min(92vw,66vh,640px);aspect-ratio:1;margin:6px auto;transition:opacity .45s,transform .45s}
+#orb.out{opacity:0;transform:scale(1.35)}
+#orb:before{content:"";position:absolute;inset:3%;border-radius:50%;border:1px dashed color-mix(in srgb,var(--c) 40%,transparent);box-shadow:inset 0 0 60px color-mix(in srgb,var(--c) 14%,transparent)}
+#ctr{position:absolute;left:50%;top:50%;width:46%;transform:translate(-50%,-50%);text-align:center;pointer-events:none}
+#ctr .big{font-size:clamp(34px,8vw,64px);filter:drop-shadow(0 0 16px var(--c))}
+#ctr h3{font-family:Georgia,serif;margin:4px 0;font-size:clamp(13px,2.6vw,21px);line-height:1.15}
+#ctr p{margin:2px 0;color:var(--mu);font-size:clamp(10px,1.8vw,13px)}
+.nd{position:absolute;left:0;top:0;border-radius:50%;border:2px solid var(--c);background:radial-gradient(circle at 32% 28%,#2c4156,#0f1a25 70%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:4px;text-align:center;line-height:1.05;box-shadow:0 0 18px color-mix(in srgb,var(--c) 45%,transparent);transition:box-shadow .25s,border-color .25s;animation:pop .6s both}
+.nd:hover,.nd:focus-visible{box-shadow:0 0 34px var(--c);border-color:#fff}
+.nd.sel{background:radial-gradient(circle at 32% 28%,var(--c),#0f1a25 85%);border-color:#fff;box-shadow:0 0 40px var(--c)}
+.nd.done:after{content:"✓";position:absolute;right:2px;top:2px;font-size:11px;background:var(--c);color:#06121a;width:16px;height:16px;border-radius:50%;line-height:16px;font-weight:700}
+.nd .ic{font-size:var(--fs,28px)}.nd .lb{font-size:var(--ls,10.5px);font-weight:600;max-width:96%}
+@keyframes pop{from{opacity:0}}
+/* painel */
+#panel{display:none;width:100%;max-width:560px;background:linear-gradient(180deg,#16222f,#101923);border:1px solid color-mix(in srgb,var(--c) 45%,#223);border-radius:18px;padding:18px;animation:slide .45s ease both}
+#panel.on{display:block}
+@keyframes slide{from{opacity:0;transform:translateX(30px)}}
+@media(max-width:899px){@keyframes slide{from{opacity:0;transform:translateY(30px)}}}
+#panel .hd{display:flex;align-items:flex-start;gap:10px}
+#panel h3{font-family:Georgia,serif;font-size:24px;margin:0;flex:1}
+#x{border:1px solid #3a4c60;background:#0e1620;border-radius:10px;width:40px;height:40px;font-size:18px}
+#x:hover{border-color:var(--c)}
+.img{height:120px;border-radius:14px;margin:12px 0;display:flex;align-items:center;justify-content:center;font-size:64px;background:radial-gradient(circle at 50% 120%,color-mix(in srgb,var(--c) 60%,transparent),#0c141c 70%);border:1px solid #2a3b4d}
+.chip{display:inline-block;padding:3px 10px;border-radius:99px;background:color-mix(in srgb,var(--c) 22%,#0c141c);border:1px solid var(--c);font-size:13px}
+#panel h4{margin:14px 0 3px;color:var(--c);font-size:14px;font-weight:700}
+#panel p{margin:0;line-height:1.55;font-size:15px;max-width:68ch}
+.cur{border-left:3px solid var(--cu);padding-left:10px}
+@media(prefers-reduced-motion:reduce){*,*:before{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="glow" aria-hidden="true"></div>
+
+<section id="intro" class="on">
+  <div id="scene"><svg id="mach" viewBox="0 0 560 330" role="img" aria-label="Composição com máquina a vapor, engrenagens, trilhos, braço robótico e microchip">
+    <defs>
+      <radialGradient id="hl" cx="50%" cy="50%"><stop offset="0" stop-color="#46d3ff" stop-opacity=".35"/><stop offset="1" stop-color="#46d3ff" stop-opacity="0"/></radialGradient>
+      <linearGradient id="mt" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e9a566"/><stop offset=".5" stop-color="#8a5326"/><stop offset="1" stop-color="#3d2610"/></linearGradient>
+      <linearGradient id="st" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9fb4c6"/><stop offset="1" stop-color="#2a3a4a"/></linearGradient>
+    </defs>
+    <ellipse cx="280" cy="170" rx="270" ry="150" fill="url(#hl)"/>
+    <g id="gears"></g>
+    <g>
+      <rect x="150" y="150" width="190" height="72" rx="36" fill="url(#mt)" stroke="#f2b57a" stroke-width="2"/>
+      <rect x="165" y="108" width="26" height="48" fill="url(#st)"/><rect x="159" y="100" width="38" height="12" rx="3" fill="#2a3a4a"/>
+      <rect x="250" y="128" width="40" height="30" rx="6" fill="url(#st)"/>
+      <circle cx="205" cy="235" r="26" fill="none" stroke="#c9d6e2" stroke-width="5"/><circle cx="300" cy="235" r="26" fill="none" stroke="#c9d6e2" stroke-width="5"/>
+      <path d="M205 235L300 235" stroke="#f2b57a" stroke-width="5"/>
+      <circle cx="120" cy="150" r="7" fill="#ffffff" opacity=".35"><animate attributeName="cy" values="150;90" dur="3s" repeatCount="indefinite"/><animate attributeName="opacity" values=".4;0" dur="3s" repeatCount="indefinite"/></circle>
+    </g>
+    <path d="M20 275H540" stroke="#6c7f92" stroke-width="4"/><path d="M20 290H540" stroke="#6c7f92" stroke-width="4"/>
+    <g stroke="#8a5326" stroke-width="5">
+      <path d="M40 270v26M90 270v26M140 270v26M190 270v26M240 270v26M290 270v26M340 270v26M390 270v26M440 270v26M490 270v26"/></g>
+    <g stroke="#46d3ff" stroke-width="7" stroke-linecap="round" fill="none"><path d="M430 275V210L470 160L500 175"/><circle cx="430" cy="212" r="9" fill="#0b1118"/><circle cx="470" cy="160" r="9" fill="#0b1118"/></g>
+    <path d="M500 175l18 -12M500 175l18 14" stroke="#46d3ff" stroke-width="5"/>
+    <g><rect x="365" y="60" width="90" height="90" rx="10" fill="#0e2230" stroke="#46d3ff" stroke-width="2.5"/><rect x="388" y="83" width="44" height="44" rx="5" fill="#46d3ff" opacity=".85"/>
+    <path d="M365 80h-18M365 105h-18M365 130h-18M455 80h18M455 105h18M455 130h18M385 60v-16M410 60v-16M435 60v-16M385 150v16M410 150v16M435 150v16" stroke="#d98b4a" stroke-width="4"/></g>
+  </svg></div>
+  <h1>As quatro Revoluções Industriais</h1>
+  <p class="lead">Do vapor à inteligência artificial: explore invenções, mudanças sociais e personagens de cada época.</p>
+  <button id="go">EXPLORAR AS REVOLUÇÕES INDUSTRIAIS</button>
+</section>
+
+<section id="main">
+  <div class="top">
+    <button class="back" id="back">← Voltar</button>
+    <h2 id="ttl"></h2>
+    <div class="prog" id="prog" aria-live="polite"></div>
+  </div>
+  <p class="note" id="note"></p>
+  <div class="grid" id="grid">
+    <div id="orb" role="group"><div id="ctr"></div></div>
+    <aside id="panel" tabindex="-1" aria-label="Detalhes do item"></aside>
+  </div>
+</section>
+
+<script>
+/* ========= DADOS (separados da estrutura visual) ========= */
+// item: [título, ícone, período, descrição, contexto histórico, impacto social, curiosidade, personagens]
+const REVS=[
+{id:1,title:"1ª Revolução Industrial",short:"Vapor e mecanização",e:"⚙️",col:"#e0924f",period:"c. 1760 – c. 1850",
+ summary:"A produção artesanal e agrária deu lugar à mecanizada, movida por água, carvão e vapor, a partir da Grã-Bretanha.",
+ items:[
+ ["Máquina a vapor","⚙️","1712 – década de 1780","Motor que converte o calor do vapor de água em movimento mecânico.","Newcomen criou em 1712 a máquina usada para drenar minas. Entre 1765 e 1769, Watt acrescentou o condensador separado, reduzindo muito o consumo de carvão; depois vieram motores rotativos.","Fábricas deixaram de depender de rios; minas e transportes ganharam energia abundante.","A unidade “cavalo-vapor” nasceu para comparar as máquinas de Watt ao trabalho de cavalos.","Thomas Newcomen, James Watt"],
+ ["Tear mecânico","🧵","Década de 1780 em diante","Tear acionado por força mecânica, e não pelo esforço do tecelão.","Edmund Cartwright patenteou um modelo em 1785; a difusão foi lenta e se apoiou em melhorias de vários inventores.","Elevou a produção de tecidos e reduziu a renda dos tecelões manuais, que resistiram à mudança.","O tear de Jacquard, com cartões perfurados (início do século XIX), inspirou ideias da computação.","Edmund Cartwright"],
+ ["Carvão mineral","⛏️","Séculos XVIII – XIX","Combustível fóssil que alimentou máquinas a vapor, fornos e siderúrgicas.","A Grã-Bretanha tinha jazidas acessíveis, e a necessidade de drenar minas estimulou a máquina a vapor.","Gerou empregos perigosos, inclusive para mulheres e crianças, e poluição nas cidades.","O coque, derivado do carvão, passou a substituir o carvão vegetal na fundição do ferro.","Abraham Darby"],
+ ["Indústria têxtil","🏭","c. 1764 – 1830","Setor pioneiro, com fiação e tecelagem mecanizadas.","A spinning jenny de Hargreaves surgiu por volta de 1764; Arkwright patenteou a water frame em 1769 e organizou fábricas movidas a água.","Tecidos de algodão mais baratos ligaram a indústria britânica ao comércio colonial e ao trabalho escravizado nas plantações.","Em 1833, a Grã-Bretanha limitou a jornada de crianças nas fábricas têxteis.","James Hargreaves, Richard Arkwright"],
+ ["Locomotiva a vapor","🚂","1804 – década de 1840","Máquina a vapor sobre trilhos que puxa vagões de carga e passageiros.","Trevithick testou uma locomotiva em 1804; George Stephenson aperfeiçoou o projeto, e a linha Liverpool–Manchester abriu em 1830.","Reduziu tempo e custo de transporte, integrou mercados e impulsionou o carvão e o ferro.","A necessidade de horários unificados nas ferrovias ajudou a padronizar a hora dentro dos países.","George Stephenson, Richard Trevithick"],
+ ["Produção de ferro","🔩","c. 1709 – 1850","Avanços metalúrgicos que deram ferro mais barato e resistente.","Abraham Darby usou coque em fornos por volta de 1709; Henry Cort desenvolveu a pudlagem na década de 1780.","Permitiu máquinas, ferramentas, trilhos e pontes, base da nova infraestrutura.","A Ponte de Ferro, na Inglaterra (1779), é considerada a primeira grande ponte de ferro fundido.","Abraham Darby, Henry Cort"],
+ ["Urbanização","🏙️","Séculos XVIII – XIX","Crescimento rápido de cidades industriais, atraindo gente do campo.","Camponeses migraram para regiões de fábricas e minas, em um contexto de mudanças no campo, como os cercamentos.","Trouxe empregos, mas também moradias superlotadas, falta de saneamento e epidemias.","Segundo o censo de 1851, cerca de metade dos britânicos já vivia em áreas urbanas.","Processo coletivo"],
+ ["Classe operária","👷","Séculos XVIII – XIX","Trabalhadores assalariados de fábricas e minas.","As jornadas eram longas e regidas pelo relógio. Surgiram protestos, como o ludismo (1811–1816), sindicatos e leis trabalhistas.","Formou-se uma nova classe social e começou a luta por salários, jornada e segurança.","Na Grã-Bretanha, as leis que proibiam associações de trabalhadores foram revogadas em 1824.","Movimento ludista"]]},
+{id:2,title:"2ª Revolução Industrial",short:"Eletricidade e produção em massa",e:"💡",col:"#ffc247",period:"c. 1870 – 1914",
+ summary:"Eletricidade, aço, química, petróleo e novas comunicações impulsionaram a produção em larga escala, em ritmos distintos entre países.",
+ items:[
+ ["Eletricidade","⚡","c. 1880 – 1900","Energia gerada em usinas e distribuída por fios para iluminar e mover motores.","Redes urbanas surgem nos anos 1880. Na disputa entre corrente contínua e alternada, a alternada prevaleceu a longa distância, com contribuições de Tesla e Westinghouse.","Fábricas passaram a funcionar à noite, com máquinas independentes; cidades ganharam bondes e iluminação.","A usina das Cataratas do Niágara (1895) ajudou a provar a corrente alternada em grande escala.","Edison, Tesla, Westinghouse"],
+ ["Lâmpada elétrica","💡","1870 – 1880","Fonte de luz que usa um filamento aquecido por corrente elétrica.","Muitos inventores trabalharam nela, como Joseph Swan; Edison e sua equipe desenvolveram em 1879 uma lâmpada durável e um sistema de distribuição.","Ampliou o tempo de trabalho e de lazer e reduziu o risco de incêndios frente a lampiões.","Edison testou centenas de materiais para o filamento, incluindo bambu carbonizado.","Thomas Edison, Joseph Swan"],
+ ["Aço","🏗️","1856 – 1900","Liga de ferro e carbono mais resistente e flexível que o ferro fundido.","O processo Bessemer (1856) e o Siemens-Martin permitiram produzi-lo em grande escala e a baixo custo.","Possibilitou ferrovias, pontes, navios e arranha-céus.","O Home Insurance Building, em Chicago (1885), é citado como um dos primeiros prédios com esqueleto metálico.","Henry Bessemer"],
+ ["Linha de montagem","🚗","1913","Organização em que o produto passa por postos com tarefas sequenciais.","Ford combinou ideias existentes, como peças intercambiáveis e esteiras, e implantou a linha móvel em Highland Park em 1913.","Barateou o automóvel e padronizou produtos, mas tornou o trabalho repetitivo e intenso.","A montagem do chassi do Modelo T caiu de cerca de 12 horas para pouco mais de 1 hora e meia.","Henry Ford"],
+ ["Motor de combustão","⛽","1876 – década de 1890","Motor que queima combustível dentro de cilindros para gerar movimento.","Otto desenvolveu o motor de quatro tempos em 1876; Benz construiu um automóvel em 1886; Diesel patenteou seu motor na década de 1890.","Criou automóveis, caminhões, tratores e aviões, e mudou o transporte e as cidades.","Diesel buscava um motor mais eficiente que a máquina a vapor.","Nikolaus Otto, Karl Benz, Rudolf Diesel"],
+ ["Petróleo","🛢️","1859 em diante","Hidrocarboneto usado como combustível e matéria-prima.","O poço de Edwin Drake, na Pensilvânia (1859), marca o início da indústria moderna; o querosene veio primeiro e a gasolina cresceu com os automóveis.","Gerou grandes empresas e disputas geopolíticas, e passou a sustentar o transporte moderno.","A gasolina já foi um subproduto pouco valorizado da produção de querosene.","Edwin Drake"],
+ ["Telefone e telégrafo","📞","1844 – década de 1880","Sistemas que transmitem mensagens por fios, em código ou voz.","Morse apresentou o telégrafo comercial em 1844; Bell patenteou o telefone em 1876, em meio a pesquisas concorrentes.","Aceleraram negócios, notícias e a coordenação de ferrovias e empresas.","O primeiro cabo telegráfico transatlântico duradouro ficou pronto em 1866.","Samuel Morse, Alexander Graham Bell"],
+ ["Indústria química","🧪","1856 – 1914","Produção em escala de corantes, fertilizantes, explosivos e remédios.","Perkin obteve o primeiro corante sintético em 1856; a Alemanha liderou o setor; Haber e Bosch desenvolveram a síntese da amônia no início do século XX.","Aumentou a produtividade agrícola e criou novos produtos, mas também armas químicas e poluição.","A malva de Perkin surgiu por acaso, quando ele tentava sintetizar quinino.","William Perkin, Fritz Haber, Carl Bosch"]]},
+{id:3,title:"3ª Revolução Industrial",short:"Eletrônica e automação",e:"💻",col:"#46d3ff",period:"c. 1950 – 2000",
+ summary:"Eletrônica, informática, telecomunicações e automação transformaram os processos produtivos, de forma desigual entre países.",
+ items:[
+ ["Computador","💻","1930 – 1970","Máquina programável que processa informações.","Turing formulou conceitos teóricos em 1936; o ENIAC (1945) foi um dos primeiros computadores eletrônicos de uso geral; Grace Hopper contribuiu para as linguagens de programação.","Mudou escritórios, bancos, indústrias e pesquisa científica.","Os primeiros computadores ocupavam salas inteiras.","Alan Turing, Grace Hopper"],
+ ["Microprocessador","🔲","1958 – 1971","Circuitos integrados que reúnem componentes eletrônicos em um chip.","Kilby (1958) e Noyce (1959) criaram versões do circuito integrado; o Intel 4004, de 1971, foi um dos primeiros microprocessadores.","Barateou e miniaturizou computadores e controladores, e viabilizou aparelhos digitais cotidianos.","O Intel 4004 tinha cerca de 2.300 transistores; chips atuais têm bilhões.","Jack Kilby, Robert Noyce"],
+ ["Robôs industriais","🦾","1961 em diante","Braços mecânicos programáveis para soldar, pintar e mover peças.","O Unimate começou a operar em uma fábrica da General Motors em 1961.","Tarefas repetitivas ou perigosas passaram às máquinas, e cresceu a demanda por qualificação técnica.","O primeiro Unimate manuseava peças metálicas quentes.","George Devol, Joseph Engelberger"],
+ ["Controladores programáveis","🎛️","1968 – década de 1970","Computadores industriais robustos que controlam máquinas por lógica programada.","Surgiram no fim dos anos 1960, a pedido da indústria automobilística, para substituir painéis de relés.","Tornaram linhas de produção mais flexíveis e fáceis de reprogramar.","O Modicon 084 costuma ser citado como o primeiro CLP comercial.","Dick Morley"],
+ ["Internet","🌐","1969 – década de 1990","Rede global de redes de computadores.","A ARPANET (1969) foi precursora; a Web foi proposta por Berners-Lee em 1989, no CERN.","Mudou comércio, informação, educação e organização do trabalho.","Internet e Web não são a mesma coisa: a Web é um serviço que roda sobre a Internet.","Tim Berners-Lee"],
+ ["Telecom digital","📡","Década de 1970 – 2000","Transmissão de dados digitais por fibras, satélites e redes móveis.","A digitalização das redes, a fibra óptica e a telefonia celular se difundiram entre as décadas de 1970 e 1990.","Aproximou pessoas e empresas e permitiu coordenar produção à distância.","A primeira chamada de um telefone celular portátil foi feita em 1973.","Martin Cooper"],
+ ["Biotecnologia","🧬","1973 em diante","Uso de organismos e técnicas biológicas em medicina, agricultura e indústria.","As primeiras técnicas de DNA recombinante surgiram em 1973; a insulina humana recombinante foi aprovada em 1982.","Ofereceu novos medicamentos e cultivos, e abriu debates éticos e ambientais.","A insulina recombinante foi um dos primeiros medicamentos de engenharia genética no mercado.","Herbert Boyer, Stanley Cohen"],
+ ["Globalização","🚢","Décadas de 1950 – 2000","Organização de cadeias de produção em vários países.","O contêiner padronizado, popularizado por Malcom McLean a partir de 1956, e as telecomunicações facilitaram a gestão de fábricas distantes.","Reduziu custos e ampliou o comércio, mas deslocou empregos e criou dependências.","O contêiner reduziu muito o tempo de carga e descarga nos portos.","Malcom McLean"]]},
+{id:4,title:"4ª Revolução Industrial",short:"Sistemas inteligentes e conectados",e:"🤖",col:"#6bf2b8",period:"Século XXI",
+ summary:"Integração de IA, sensores, conectividade e robótica aos sistemas físicos. O diferencial não é ter robôs, e sim conectá-los a dados e adaptá-los. Conceito popularizado por Klaus Schwab.",
+ items:[
+ ["Inteligência artificial","🤖","1950 – hoje","Sistemas que reconhecem padrões, geram conteúdo, apoiam decisões e automatizam tarefas.","A área nasceu nos anos 1950; o aprendizado profundo avançou nos anos 2010 com mais dados e poder de cálculo, com contribuições como as de Geoffrey Hinton e Fei-Fei Li.","Automatiza tarefas e apoia decisões, com debates sobre vieses, privacidade e emprego.","A base de imagens ImageNet foi decisiva para avanços em visão computacional.","Geoffrey Hinton, Fei-Fei Li"],
+ ["Internet das Coisas","📶","1999 em diante","Objetos com sensores e conexão que coletam e trocam dados.","O termo foi popularizado por Kevin Ashton em 1999; sensores baratos e redes sem fio ampliaram o uso.","Permite monitorar casas, cidades, máquinas e plantações.","Hoje há bilhões de dispositivos conectados no mundo.","Kevin Ashton"],
+ ["Fábricas inteligentes","🏭","2010 em diante","Fábricas em que máquinas, sensores e softwares coordenam e monitoram a produção.","A expressão Indústria 4.0 foi apresentada na Alemanha em 2011, na Feira de Hannover.","Reduz paradas e desperdício e personaliza produtos, exigindo novas competências.","Máquinas podem alertar antes de quebrar, na chamada manutenção preditiva.","Iniciativa alemã Industrie 4.0"],
+ ["Robótica avançada","🦿","Anos 2000 – hoje","Robôs adaptáveis, com sensores e IA, que podem colaborar com pessoas.","Robôs colaborativos (cobots) se difundiram a partir dos anos 2000 para trabalhar ao lado de operadores.","Chegam a pequenas empresas, logística e saúde, e mudam a divisão de tarefas.","Muitos robôs de armazéns operam em frotas coordenadas por software.","Pesquisadores e empresas diversos"],
+ ["Big Data","📊","Anos 2000 – hoje","Análise de grandes volumes de dados para achar padrões e otimizar decisões.","O barateamento do armazenamento e a coleta de dados por internet e sensores impulsionaram a prática.","Melhora logística, saúde e serviços, mas levanta questões de privacidade.","O termo costuma ser associado a volume, velocidade e variedade dos dados.","Origem coletiva"],
+ ["Computação em nuvem","☁️","2006 em diante","Acesso remoto a servidores, armazenamento e programas pela internet.","A Amazon lançou serviços de nuvem pública em 2006, e outras empresas seguiram.","Reduz o custo inicial e facilita colaboração, mas cria dependência de provedores.","Os dados “na nuvem” ficam, na verdade, em centros de dados físicos.","Empresas de tecnologia"],
+ ["Impressão 3D","🖨️","1984 em diante","Fabricação de objetos por camadas de material, a partir de um modelo digital.","Chuck Hull criou a estereolitografia em 1984; o fim de patentes e a queda de custos popularizaram a técnica.","Acelera protótipos, peças sob medida e próteses.","A técnica já foi usada em peças de foguetes e em casas.","Chuck Hull"],
+ ["Gêmeos digitais","🪞","Anos 2000 – hoje","Modelo virtual de um equipamento ou processo, atualizado com dados reais.","O conceito foi formulado por Michael Grieves no início dos anos 2000, com raízes em simulações como as da NASA.","Permite testar mudanças sem parar a produção física.","A NASA usou simuladores para apoiar a resposta à crise da Apollo 13.","Michael Grieves"]]}
+];
+const IDEAS={3:0};
+
+/* ========= COMPONENTE ORBITAL REUTILIZÁVEL ========= */
+const $=s=>document.querySelector(s),orb=$("#orb"),ctr=$("#ctr"),panel=$("#panel"),grid=$("#grid");
+const RM=matchMedia("(prefers-reduced-motion:reduce)").matches;
+const Orbit={ang:-Math.PI/2,f:1,tgt:1,paused:false,els:[],t0:0,speed:.18,
+ build(list,onPick,kind){
+  this.els.forEach(b=>b.remove());this.els=[];this.paused=false;this.f=1;this.tgt=1;this.kind=kind;
+  list.forEach((it,i)=>{
+   const b=document.createElement("button");b.className="nd";b.style.animationDelay=i*70+"ms";
+   b.setAttribute("aria-label",it.label);
+   b.innerHTML=`<span class="ic" aria-hidden="true">${it.icon}</span><span class="lb">${it.text}</span>`;
+   b.style.setProperty("--c",it.color||"var(--c)");
+   const slow=()=>{if(!this.paused)this.tgt=.12},fast=()=>{if(!this.paused)this.tgt=1};
+   b.onmouseenter=slow;b.onmouseleave=fast;b.onfocus=slow;b.onblur=fast;
+   b.onclick=()=>onPick(i,b);orb.appendChild(b);this.els.push(b);
+  });this.place();
+ },
+ place(){
+  const n=this.els.length;if(!n)return;const R=orb.clientWidth/2;
+  const cap=n<6?R*.62:R*.46;
+  const ns=Math.min(cap,2*Math.PI*R*.78/n*.86);
+  const r=R-ns/2-R*.05;
+  this.els.forEach((b,i)=>{
+   const a=this.ang+i*2*Math.PI/n,x=R+r*Math.cos(a)-ns/2,y=R+r*Math.sin(a)-ns/2;
+   const d=.9+.1*(Math.sin(a)+1)/2;
+   b.style.width=b.style.height=ns+"px";
+   b.style.setProperty("--fs",ns*.34+"px");b.style.setProperty("--ls",Math.max(9,Math.min(13,ns*.12))+"px");
+   b.style.transform=`translate(${x}px,${y}px) scale(${d})`;b.style.zIndex=Math.round(d*10);
+  });
+ },
+ pause(){this.paused=true;this.tgt=0},
+ resume(){this.paused=false;this.tgt=1},
+ tick(t){
+  const dt=Math.min(.05,(t-this.t0)/1000||0);this.t0=t;
+  this.f+=(this.tgt-this.f)*Math.min(1,dt*3.5);
+  if(!RM&&!document.hidden)this.ang+=dt*this.speed*this.f;
+  this.place();requestAnimationFrame(x=>this.tick(x));
+ }};
+requestAnimationFrame(t=>{Orbit.t0=t;Orbit.tick(t)});
+addEventListener("resize",()=>Orbit.place());
+
+/* ========= NAVEGAÇÃO ========= */
+const show=id=>{document.querySelectorAll("section").forEach(s=>s.classList.toggle("on",s.id===id));scrollTo(0,0)};
+const swap=fn=>{if(RM){fn();return}orb.classList.add("out");setTimeout(()=>{fn();orb.classList.remove("out")},450)};
+let cur=null,seen={1:new Set(),2:new Set(),3:new Set(),4:new Set()},lastBtn=null;
+function setAccent(c){document.documentElement.style.setProperty("--c",c)}
+function showPick(){
+ closePanel(true);cur=null;setAccent("#46d3ff");
+ $("#ttl").textContent="Escolha uma revolução";$("#prog").innerHTML="";$("#back").textContent="← Início";
+ $("#note").textContent="A industrialização ocorreu em ritmos diferentes conforme a região.";
+ ctr.innerHTML=`<div class="big" aria-hidden="true">⚙️</div><h3>Revoluções Industriais</h3><p>Clique em uma órbita</p>`;
+ Orbit.build(REVS.map(r=>({icon:r.e,text:`${r.id}ª · ${r.short}`,label:`${r.title}: ${r.short}`,color:r.col})),(i,b)=>{
+  Orbit.pause();b.classList.add("sel");setTimeout(()=>swap(()=>showCircle(i)),RM?0:350)},"pick");
+}
+function showCircle(i){
+ cur=REVS[i];setAccent(cur.col);closePanel(true);
+ $("#ttl").textContent=cur.title;$("#back").textContent="← Revoluções";
+ $("#note").textContent="Clique em um item da órbita para ler sobre ele.";
+ ctr.innerHTML=`<div class="big" aria-hidden="true">${cur.e}</div><h3>${cur.short}</h3><p>${cur.period}</p>`;
+ Orbit.build(cur.items.map(it=>({icon:it[1],text:it[0],label:`${it[0]}, abrir descrição`})),(k,b)=>openItem(k,b),"items");
+ cur.items.forEach((_,k)=>seen[cur.id].has(k)&&Orbit.els[k].classList.add("done"));
+ progress();
+}
+function progress(){
+ const n=cur.items.length,v=seen[cur.id].size;
+ $("#prog").innerHTML=`${v}/${n} explorados<div class="bar"><i style="width:${v/n*100}%"></i></div>`;
+}
+function openItem(k,b){
+ const it=cur.items[k];lastBtn=b;Orbit.pause();
+ Orbit.els.forEach(e=>e.classList.remove("sel"));b.classList.add("sel");
+ seen[cur.id].add(k);b.classList.add("done");progress();
+ panel.innerHTML=`<div class="hd"><h3>${it[0]}</h3><button id="x" aria-label="Fechar descrição">✕</button></div>
+ <div class="img" role="img" aria-label="Representação de ${it[0]}">${it[1]}</div>
+ <span class="chip">${it[2]}</span>
+ <h4>O que foi</h4><p>${it[3]}</p>
+ <h4>Contexto histórico</h4><p>${it[4]}</p>
+ <h4>Impacto econômico e social</h4><p>${it[5]}</p>
+ <h4>Curiosidade</h4><p class="cur">${it[6]}</p>
+ <h4>Personagens associados</h4><p>${it[7]}</p>`;
+ panel.classList.remove("on");void panel.offsetWidth;panel.classList.add("on");grid.classList.add("open");
+ $("#x").onclick=()=>closePanel();
+ panel.focus({preventScroll:true});
+ if(matchMedia("(max-width:899px)").matches)panel.scrollIntoView({behavior:RM?"auto":"smooth",block:"start"});
+}
+function closePanel(silent){
+ panel.classList.remove("on");grid.classList.remove("open");
+ Orbit.els.forEach(e=>e.classList.remove("sel"));
+ if(!silent){Orbit.resume();lastBtn&&lastBtn.focus({preventScroll:true})}
+}
+$("#go").onclick=()=>{const m=$("#mach");if(!RM)m.style.transform="scale(1.25)";setTimeout(()=>{show("main");showPick()},RM?0:450)};
+$("#back").onclick=()=>{if(cur)swap(showPick);else{show("intro");$("#mach").style.transform=""}};
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&panel.classList.contains("on"))closePanel()});
+
+/* ========= EFEITOS DA CENA ========= */
+function gear(cx,cy,r,n,fill,cls){
+ let p="";for(let i=0;i<n*2;i++){const a=i*Math.PI/n,rr=i%2?r*.8:r;p+=(i?"L":"M")+(cx+rr*Math.cos(a)).toFixed(1)+" "+(cy+rr*Math.sin(a)).toFixed(1)}
+ return `<g class="spin ${cls}"><path d="${p}Z" fill="${fill}" stroke="#f2b57a" stroke-width="2"/><circle cx="${cx}" cy="${cy}" r="${r*.3}" fill="#0b1118"/></g>`}
+$("#gears").innerHTML=gear(95,95,58,12,"url(#mt)","")+gear(168,52,30,9,"url(#st)","rev")+gear(300,300-110,0,3,"none","");
+const sc=$("#scene"),mach=$("#mach"),glow=document.querySelector(".glow");
+addEventListener("pointermove",e=>{
+ glow.style.setProperty("--mx",e.clientX+"px");glow.style.setProperty("--my",e.clientY+"px");
+ if(RM||!$("#intro").classList.contains("on"))return;
+ const b=sc.getBoundingClientRect(),x=(e.clientX-b.left)/b.width-.5,y=(e.clientY-b.top)/b.height-.5;
+ mach.style.transform=`rotateY(${x*14}deg) rotateX(${-y*10}deg)`;
+});
+</script>
+</body>
+</html>
