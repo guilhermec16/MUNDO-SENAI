@@ -1,20 +1,59 @@
-Orador 1: Introdução e Enquadramento do Projeto FALA:"Olá a todos e sejam muito bem-vindos!
-Hoje vimos apresentar-vos o nosso projeto escolar TRABALHO.FUTURO, intitulado «Das oficinas artesanais à robótica industrial».   O objetivo principal deste trabalho é analisar mais de 260 anos de história e entender como a evolução tecnológica transformou não só as máquinas e os meios de produção, mas também as relações de trabalho e a vida das pessoas nas cidades.
-Através da nossa plataforma, dividimos esta jornada por 4 grandes Revoluções Industriais e desenvolvemos ferramentas interativas para ajudar a compreender cada etapa:   Uma Linha do Tempo Interativa com marcos históricos, comparações e glossário;   Um Minijogo de Simulação chamado «Cidade em Revolução», onde é possível administrar uma cidade ao longo de todas as eras industriais.   Passo agora a palavra ao [Nome do Orador 2], que nos vai guiar pelas primeiras etapas desta transformação
+Aqui tens a adaptação do guião de apresentação reestruturada para **2 oradores**, mantendo todo o conteúdo histórico, a explicação do projeto e a demonstração do minijogo de forma equilibrada.
+
+---
+
+### **Orador 1: Introdução, Enquadramento e Início da História**
+
+> **FALA:**
+> "Olá a todos e sejam muito bem-vindos!
+> Hoje vimos apresentar-vos o nosso projeto escolar **TRABALHO.FUTURO**, intitulado **«Das oficinas artesanais à robótica industrial»**.
+> 
+> 
+> O objetivo principal deste trabalho é analisar mais de 260 anos de história e entender como a evolução tecnológica transformou não só as máquinas e a produção, mas também as relações de trabalho e a vida das pessoas nas cidades. Para isso, criámos uma plataforma com uma **Linha do Tempo Interativa** e um **Minijogo de Simulação**.
+> 
+> 
+> Para compreender onde estamos hoje, precisamos de voltar ao início:
+> 
+> 
+> * **Antes da Indústria:** A produção era feita manualmente por artesãos em oficinas ou manufaturas, com ferramentas simples e um ritmo lento.
+> 
+> 
+> * **1ª Revolução Industrial (c. 1760–1850):** Marcada pela máquina a vapor, pelo uso do carvão e pela mecanização da indústria têxtil. As fábricas atraíram trabalhadores do campo para as cidades, mas trouxeram problemas como jornadas longas, salários baixos, trabalho infantil e protestos como o ludismo.
+> 
+> 
+> * **2ª Revolução Industrial (c. 1870–1914):** A eletricidade, o petróleo e o aço transformaram a produção e os transportes. A linha de montagem, associada ao Taylorismo e ao Fordismo, permitiu a produção em massa, levando também ao fortalecimento dos sindicatos na luta por melhores condições de trabalho.
+> 
+> 
+> 
+> 
+> Passo agora a palavra ao meu colega, que nos vai guiar pela era digital e pela nossa vertente prática."
+
+---
+
+### **Orador 2: Era Digital, Panorama Nacional, Minijogo e Conclusão**
+
+> **FALA:**
+> "Obrigado! A partir da segunda metade do século XX, entrámos numa nova fase tecnológica:
+> 
+> 
+> * **3ª Revolução Industrial (c. 1950–2000):** A era dos computadores, da eletrónica e dos robôs industriais. Com o modelo Toyotista, a produção tornou-se mais flexível e a qualificação técnica passou a ser indispensável.
+> 
+> 
+> * **4ª Revolução Industrial (Século XXI):** A era dos sistemas conectados, com inteligência artificial, internet das coisas (IoT), sensores e data centers. Esta fase cria novas oportunidades de trabalho, mas exige requalificação constante e cuidados ambientais e de privacidade.
+> 
+> 
+> * **A Indústria no Brasil:** Abordamos também o cenário nacional, desde o impulso à indústria de base na era Vargas (com a criação da Companhia Siderúrgica Nacional), até à consolidação da CLT e ao papel do SENAI na formação profissional.
 
 
 
+> 
+> **O Minijogo "Cidade em Revolução":**
+> Para colocar a teoria em prática, desenvolvemos um minijogo no qual o jogador gere uma cidade ao longo de **5 eras industriais**. Cada escolha de construção afeta diretamente recursos como **capital, empregos, oferta de energia, nível de qualificação, poluição e bem-estar dos habitantes**. O objetivo é mostrar que o crescimento económico precisa de andar de mãos dadas com a qualidade de vida.
+> 
+> 
+> **Conclusão:**
+> A grande lição do projeto é que a tecnologia não decide o futuro sozinha. As decisões de governos, empresas e trabalhadores determinam como a inovação é utilizada.
+> Convidamos todos a navegar pelo nosso site e a testar o minijogo!
+> Muito obrigado pela atenção e estamos abertos às vossas perguntas!"
 
-"Orador 2: Das Oficinas Artesanais à 2ª Revolução Industrial FALA:"Obrigado! Para percebermos onde estamos hoje, precisamos de voltar ao início, antes da existência das máquinas.   Antes da Indústria: Os produtos eram fabricados manualmente por artesãos em oficinas ou manufaturas. O ritmo de trabalho era lento e a produção muito limitada.   1ª Revolução Industrial (c. 1760–1850): Marcada pelo surgimento da máquina a vapor, pela utilização do carvão e pela mecanização da indústria têxtil. As fábricas concentraram a produção e atraíram populações do campo para as cidades. Este crescimento trouxe grandes desafios sociais, como jornadas de trabalho exaustivas, salários baixos e a exploração do trabalho infantil, surgindo movimentos de protesto como o ludismo.
-2ª Revolução Industrial (c. 1870–1914): A chegada da eletricidade, do petróleo e do aço mudou radicalmente os transportes e a produção. Com a linha de montagem e conceitos como o Taylorismo e o Fordismo, a produção passou a ser em massa. Em resposta à intensificação do trabalho, os movimentos sindicais ganharam força na luta por direitos e jornadas mais curtas.   Agora, o [Nome do Orador 3] vai explicar como entrámos na era digital.
-
-
-
-"Orador 3: Da 3ª à 4ª Revolução Industrial e o Panorama Nacional FALA:"Obrigado! A partir da segunda metade do século XX, o trabalho deu um salto gigante em termos tecnológicos.
-3ª Revolução Industrial (c. 1950–2000): É a era da eletrónica, dos computadores e da automação. Os primeiros robôs industriais passaram a realizar tarefas perigosas e repetitivas. Com o modelo Toyotista, a produção tornou-se mais flexível e a qualificação profissional passou a ser essencial.   4ª Revolução Industrial (Século XXI): É a fase em que vivemos hoje. Tecnologias como a inteligência artificial, a internet das coisas (IoT), os sensores e os data centers conectam máquinas e dados em tempo real. Esta fase cria novas profissões, mas exige requalificação constante, atenção à privacidade dos dados e fontes de energia sustentáveis.
- O Contexto Histórico no Brasil: No nosso projeto abordamos também a industrialização nacional. Destacamos momentos decisivos como o incentivo à indústria de base na era Vargas (com a criação da Companhia Siderúrgica Nacional), a consolidação das leis do trabalho (CLT) e a criação do SENAI para a formação profissional.   Vou agora passar a palavra ao [Nome do Orador 4], que vos apresentará a nossa vertente prática e interativa.
-
-
-
-"Orador 4: O Minijogo "Cidade em Revolução" e Conclusão FALA:"Obrigado! Para consolidar todo este conhecimento de forma prática, criámos o minijogo «Cidade em Revolução».   No jogo, o utilizador assume o papel de gestor da cidade e evolui o seu município ao longo de 5 eras industriais.   Cada construção (seja uma oficina, uma fábrica a vapor, uma usina elétrica, uma fábrica automatizada ou um data center de IA) afeta indicadores diretos: capital, empregos, oferta de energia, nível de qualificação, poluição e o bem-estar da população.   O grande objetivo do jogo é mostrar que não basta produzir mais: é preciso equilibrar tecnologia, transição energética e qualidade de vida das pessoas.   Conclusão:
-A grande lição do nosso projeto é que a tecnologia não decide o futuro sozinha. As escolhas que governos, empresas e trabalhadores fazem hoje vão determinar se a inovação resultará num trabalho mais digno, seguro e inclusivo para todos.   Convidamos todos a explorar a nossa linha do tempo e a testar o minijogo no nosso site!   Muito obrigado pela atenção e ficamos à disposição para as vossas perguntas!"
+ 
