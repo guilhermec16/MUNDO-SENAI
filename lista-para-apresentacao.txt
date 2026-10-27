@@ -33,9 +33,10 @@ Equipe: Diogo, Gregori, Gabriel, Guilherme e Joe
 
 4. DIVISÃO DURANTE A APRESENTAÇÃO
 
-[ ] Gabriel e Guilherme: apresentação da manhã, das 9h às 12h.
-[ ] Gregori e Diogo: apresentação da tarde, das 13h30 às 17h30.
-[ ] Joe: responsável pelo site e por garantir que o site, o quiz e a cópia de segurança estejam funcionando.
+[ ] Gregori e Guilherme: apresentação da manhã, das 8h00 às 12h00.
+[ ] Gabriel e DIogo: apresentação da manhã, das 13h às 17h.
+Joe: Imprimir Os Certificados
+
 
 5. ANTES DE COMEÇAR
 
