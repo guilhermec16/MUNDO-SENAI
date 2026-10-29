@@ -5,7 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Da Oficina à Robótica — Início</title>
+  <script>try { var t = localStorage.getItem("tema-site"); document.documentElement.dataset.tema = (t === "escuro" || t === "claro" || t === "misto") ? t : "misto" } catch (e) { document.documentElement.dataset.tema = "misto" }</script>
+  <meta name="theme-color" content="#0a0720">
   <link rel="stylesheet" href="style.css">
+  <script src="carros.js" defer></script>
   <script src="script.js" defer></script>
 </head>
 
@@ -15,6 +18,13 @@
         class="marca-claro">.FUTURO</span></a>
     <nav><a class="selecionado" href="index.html">Início</a><a href="conteudo.html">Linha do tempo</a><a
         href="cidade.html">Minigame</a></nav>
+    <div class="tema-seletor" role="group" aria-label="Aparência do site"><button type="button" data-tema="escuro"
+        aria-pressed="false" title="Modo escuro completo"><span
+          aria-hidden="true">🌙</span><b>Escuro</b></button><button type="button" data-tema="misto" aria-pressed="true"
+        title="Alterna seções escuras e claras"><span aria-hidden="true">◐</span><b>Misto</b></button><button
+        type="button" data-tema="claro" aria-pressed="false"
+        title="Modo claro completo (melhor para quem enxerga melhor com fundo claro)"><span
+          aria-hidden="true">☀️</span><b>Claro</b></button></div>
   </header>
   <main>
     <section class="hero">
