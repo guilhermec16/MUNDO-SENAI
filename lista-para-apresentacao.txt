@@ -33,8 +33,8 @@ Equipe: Diogo, Gregori, Gabriel, Guilherme e Joe
 
 4. DIVISÃO DURANTE A APRESENTAÇÃO
 
-[ ] Gregori e Guilherme: apresentação da manhã, das 8h00 às 12h00.
-[ ] Gabriel e DIogo: apresentação da manhã, das 13h às 17h.
+[ ] Diogo e Machado: apresentação da manhã, das 8h00 às 12h00.
+[ ] Gregori e Guilherme: apresentação de tarde, das 13h às 17h.
 Joe: Imprimir Os Certificados.
 Diogo: Bala e pirulito.
 
