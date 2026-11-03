@@ -53,7 +53,6 @@ Aqui tens a adaptação do guião de apresentação reestruturada para **2 orado
 > 
 > **Conclusão:**
 > A grande lição do projeto é que a tecnologia não decide o futuro sozinha. As decisões de governos, empresas e trabalhadores determinam como a inovação é utilizada.
-> Convidamos todos a navegar pelo nosso site e a testar o minijogo!
 > Muito obrigado pela atenção e estamos abertos às vossas perguntas!"
 
  
