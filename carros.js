@@ -79,41 +79,31 @@
   };
 
   const ESTAGIOS = [
-    {
-      curto: "Antes", era: "Antes das máquinas", ano: "até c. 1760", titulo: "Carruagem puxada por cavalos", cor: "#8b5cf6", arte: "carruagem", nivel: 0,
+    { curto: "Antes", era: "Antes das máquinas", ano: "até c. 1760", titulo: "Carruagem puxada por cavalos", cor: "#d9627d", arte: "carruagem", wiki: "en:Carriage", nivel: 0,
       nivelTxt: "Nenhuma automação: tudo dependia do cocheiro e dos animais.",
       como_era: "Veículos de madeira com rodas grandes e pouca suspensão, puxados por cavalos ou bois. Viajar era lento e cansativo, e as estradas, em geral, eram de terra.",
       como_func: "A força vinha dos animais. O cocheiro guiava com rédeas e chicote, e o freio era um mecanismo simples nas rodas ou a própria parada dos animais.",
-      curio: "A unidade “cavalo-vapor”, usada até hoje para medir motores, foi criada por James Watt para comparar a força das máquinas com a dos cavalos."
-    },
-    {
-      curto: "1ª", era: "1ª Revolução Industrial", ano: "1769", titulo: "Fardier a vapor de Cugnot", cor: "#f97316", arte: "vapor", nivel: 1,
+      curio: "A unidade “cavalo-vapor”, usada até hoje para medir motores, foi criada por James Watt para comparar a força das máquinas com a dos cavalos." },
+    { curto: "1ª", era: "1ª Revolução Industrial", ano: "1769", titulo: "Fardier a vapor de Cugnot", cor: "#ff5825", arte: "vapor", wiki: "en:Nicolas-Joseph_Cugnot", nivel: 1,
       nivelTxt: "Nível 1: a máquina faz a força, mas o condutor controla tudo.",
       como_era: "Um dos primeiros veículos autopropulsados da história: um carro pesado, de madeira e ferro, com três rodas e uma grande caldeira na frente. O francês Nicolas-Joseph Cugnot o projetou para puxar canhões.",
       como_func: "O carvão aquecia a água da caldeira, e o vapor empurrava pistões ligados à roda da frente. Era preciso reabastecer de água e combustível com frequência, e o veículo andava a poucos quilômetros por hora.",
-      curio: "Segundo relatos, os testes mostraram que ele era difícil de controlar, e ele pode ter protagonizado um dos primeiros acidentes de automóvel."
-    },
-    {
-      curto: "2ª", era: "2ª Revolução Industrial", ano: "1886–1913", titulo: "Do Benz Motorwagen ao Ford Modelo T", cor: "#06b6d4", arte: "modeloT", nivel: 2,
+      curio: "Segundo relatos, os testes mostraram que ele era difícil de controlar, e ele pode ter protagonizado um dos primeiros acidentes de automóvel." },
+    { curto: "2ª", era: "2ª Revolução Industrial", ano: "1886–1913", titulo: "Do Benz Motorwagen ao Ford Modelo T", cor: "#ff8a5e", arte: "modeloT", wiki: "en:Ford_Model_T", nivel: 2,
       nivelTxt: "Nível 2: motor de combustão e partida elétrica ajudam, mas o motorista faz tudo.",
       como_era: "O Motorwagen de Karl Benz (1886) é visto como o primeiro automóvel com motor de combustão feito para uso próprio. O Ford Modelo T (1908) era simples e resistente e, com a linha de montagem móvel (1913), ficou barato para milhões de pessoas.",
       como_func: "Motor a gasolina de combustão interna, câmbio e pedais manuais. No Modelo T a partida era por manivela; a partida elétrica chegou em 1912, em um Cadillac, e acabou com o risco da manivela.",
-      curio: "Entre 1908 e 1927 foram fabricados mais de 15 milhões de Modelos T. O grande salto de automação dessa fase estava na fábrica."
-    },
-    {
-      curto: "3ª", era: "3ª Revolução Industrial", ano: "1950–2000", titulo: "O carro da era eletrônica", cor: "#7c3aed", arte: "eletronico", nivel: 3,
+      curio: "Entre 1908 e 1927 foram fabricados mais de 15 milhões de Modelos T. O grande salto de automação dessa fase estava na fábrica." },
+    { curto: "3ª", era: "3ª Revolução Industrial", ano: "1950–2000", titulo: "O carro da era eletrônica", cor: "#b8304a", arte: "eletronico", wiki: "en:Mercedes-Benz_W116", nivel: 3,
       nivelTxt: "Nível 3: o computador assume tarefas pontuais, e o motorista continua dirigindo.",
       como_era: "Carros com injeção eletrônica, computador de bordo, freios ABS, airbag e vidros e travas elétricos. Nas fábricas, robôs soldavam e pintavam carrocerias; o primeiro robô industrial, o Unimate, trabalhou em uma fábrica da GM em 1961.",
       como_func: "Sensores medem rotação, temperatura e oxigênio, e um módulo eletrônico (ECU) ajusta a mistura de combustível. No ABS, sensores nas rodas evitam o travamento dos freios. O controle de cruzeiro (1958) mantém a velocidade sozinho.",
-      curio: "O Mazda Eunos Cosmo (1990) foi o primeiro carro de produção com navegação por GPS."
-    },
-    {
-      curto: "4ª", era: "4ª Revolução Industrial", ano: "século XXI", titulo: "Carro elétrico, conectado e autônomo", cor: "#d946ef", arte: "autonomo", nivel: 4,
+      curio: "O Mazda Eunos Cosmo (1990) foi o primeiro carro de produção com navegação por GPS." },
+    { curto: "4ª", era: "4ª Revolução Industrial", ano: "século XXI", titulo: "Carro elétrico, conectado e autônomo", cor: "#f0405a", arte: "autonomo", wiki: "en:Nissan_Leaf", nivel: 4,
       nivelTxt: "Nível 4 de 5: autônomo em condições e locais definidos. O nível 5, em qualquer lugar, ainda é uma meta.",
       como_era: "Carros elétricos (como o Nissan Leaf, de 2010), conectados à internet, com câmeras, radares e sensores ao redor. O software se atualiza pelo ar, como o de um celular.",
       como_func: "Câmeras, radar e lidar mapeiam o entorno, e a inteligência artificial reconhece pessoas, faixas e sinais e decide frear, acelerar ou virar. Já existem frenagem automática de emergência e manutenção de faixa, e há veículos autônomos em testes e em serviços limitados em algumas cidades.",
-      curio: "A indústria classifica a direção automatizada em níveis de 0 a 5. No nível 5, o carro dirigiria sozinho em qualquer lugar e condição."
-    }
+      curio: "A indústria classifica a direção automatizada em níveis de 0 a 5. No nível 5, o carro dirigiria sozinho em qualquer lugar e condição." }
   ];
 
   const iconeCard = `<svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -124,23 +114,46 @@
     </svg>`;
 
   const modelo = {
-    id: "carros", rotulo: "Evolução dos carros", cor: "#0891b2", x: "3%", y: "56%", arte: iconeCard,
+    id: "carros", wiki: "en:Ford_Model_T", rotulo: "Evolução dos carros", cor: "#e0481f", x: "3%", y: "56%", arte: iconeCard,
     data: "séc. XVIII → hoje", subtitulo: "Do cavalo ao carro autônomo", titulo: "A evolução dos carros e da automação"
   };
 
-  let timer = null, atual = 0, raiz = null;
+  let timer = null, atual = 0, raiz = null, modoFoto = false;
+  const fotos = {};
   const parar = () => {
     if (timer) { clearInterval(timer); timer = null; }
     if (raiz) { const b = raiz.querySelector('[data-acao="play"]'); if (b) { b.classList.remove("tocando"); b.querySelector("span").textContent = "▶ Reproduzir"; } }
   };
+
+  function aplicarModo() {
+    const box = raiz.querySelector(".car-img"), arte = box.querySelector(".car-arte"), fig = box.querySelector(".car-foto");
+    const nota = raiz.querySelector(".car-nota"), idx = atual, e = ESTAGIOS[idx];
+    const ligar = () => raiz.querySelectorAll(".car-alterna button").forEach(b => { const on = (b.dataset.modo === "foto") === modoFoto; b.classList.toggle("on", on); b.setAttribute("aria-pressed", String(on)); });
+    nota.textContent = "";
+    if (!modoFoto) { arte.hidden = false; fig.hidden = true; ligar(); return; }
+    const exibir = (r) => {
+      if (idx !== atual || !modoFoto) return;
+      const im = fig.querySelector("img"); im.alt = "Foto real: " + e.titulo; im.src = r.url;
+      const cap = fig.querySelector("figcaption"); cap.textContent = "";
+      const a = document.createElement("a"); a.href = r.pagina; a.target = "_blank"; a.rel = "noopener"; a.textContent = r.credito; cap.appendChild(a);
+      arte.hidden = true; fig.hidden = false;
+    };
+    const falhou = () => { if (idx !== atual) return; modoFoto = false; arte.hidden = false; fig.hidden = true; nota.textContent = "Foto indisponível agora (é preciso estar online). Mostrando a ilustração."; ligar(); };
+    ligar();
+    if (fotos[idx]) { exibir(fotos[idx]); return; }
+    if (fotos[idx] === null || !window.FotosWiki) { falhou(); return; }
+    nota.textContent = "Carregando foto…";
+    window.FotosWiki.resolver(e.wiki, 720).then(r => { fotos[idx] = r || null; nota.textContent = ""; if (r) exibir(r); else falhou(); });
+  }
 
   function mostrar(i, entrar) {
     atual = (i + ESTAGIOS.length) % ESTAGIOS.length;
     const e = ESTAGIOS[atual];
     raiz.style.setProperty("--cor", e.cor);
     const img = raiz.querySelector(".car-img");
-    img.innerHTML = ARTE[e.arte](e.titulo);
+    img.innerHTML = '<div class="car-arte">' + ARTE[e.arte](e.titulo) + '</div><figure class="car-foto" hidden><img alt="" referrerpolicy="no-referrer" decoding="async"><figcaption></figcaption></figure>';
     if (entrar) { img.classList.remove("entra"); void img.offsetWidth; img.classList.add("entra"); }
+    aplicarModo();
     raiz.querySelector(".car-legenda").innerHTML = `<b>${e.titulo}</b><span>${e.era} • ${e.ano}</span>`;
     const info = raiz.querySelector(".car-info");
     info.innerHTML = `<div class="car-bloco"><span>COMO ERA</span><p>${e.como_era}</p></div>
@@ -154,7 +167,7 @@
 
   function montar(painel, m) {
     parar();
-    raiz = painel; atual = 0;
+    raiz = painel; atual = 0; modoFoto = false;
     painel.style.setProperty("--cor", ESTAGIOS[0].cor);
     painel.innerHTML = `
       <span class="painel-data">${m.data}</span>
@@ -166,6 +179,8 @@
       <div class="car-cena">
         <div class="car-visual">
           <div class="car-img"></div>
+          <div class="car-alterna" role="group" aria-label="Tipo de imagem"><button type="button" data-modo="arte" class="on" aria-pressed="true">Ilustração</button><button type="button" data-modo="foto" aria-pressed="false">Foto real</button></div>
+          <p class="car-nota" aria-live="polite"></p>
           <p class="car-legenda"></p>
           <div class="car-nivel-wrap"><span class="car-nivel-rotulo">AUTOMAÇÃO</span><div class="car-nivel" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div></div>
           <p class="car-nivel-txt"></p>
@@ -182,6 +197,7 @@
         <a class="botao principal" href="conteudo.html">Ver na linha do tempo ↗</a>
       </div>`;
     painel.querySelectorAll(".car-tab").forEach(b => b.addEventListener("click", () => { parar(); mostrar(+b.dataset.i, true); }));
+    painel.querySelectorAll(".car-alterna button").forEach(b => b.addEventListener("click", () => { modoFoto = b.dataset.modo === "foto"; aplicarModo(); }));
     painel.querySelector('[data-acao="ant"]').addEventListener("click", () => { parar(); mostrar(atual - 1, true); });
     painel.querySelector('[data-acao="prox"]').addEventListener("click", () => { parar(); mostrar(atual + 1, true); });
     painel.querySelector('[data-acao="play"]').addEventListener("click", ev => {

@@ -21,104 +21,60 @@
   const base = { moradia: 0, empregos: 0, prod: 0, energia: 0, poluicao: 0, bem: 0, qual: 0, exigeQual: 0 };
   const mk = (id, o) => ({ id, ...base, ...o });
   const LISTA = [
-    mk("casa", {
-      nome: "Casa", emoji: "🏠", era: 0, custo: 40, cor: "#e7c9a0", moradia: 4, bem: 1,
-      info: "No início da industrialização, a maior parte das pessoas vivia no campo ou em pequenas vilas. As cidades industriais cresceram com a migração de gente em busca de trabalho."
-    }),
-    mk("oficina", {
-      nome: "Oficina artesanal", emoji: "🔨", era: 0, custo: 70, cor: "#c98a4b", empregos: 4, prod: 5, poluicao: 1,
-      info: "Nas oficinas, artesãos dominavam várias etapas da produção com ferramentas manuais. A produção era pequena e lenta."
-    }),
-    mk("moinho", {
-      nome: "Moinho de água", emoji: "⚙️", era: 0, custo: 90, cor: "#e6d3a3", empregos: 3, prod: 6,
-      info: "Moinhos de água e de vento aproveitavam a energia da natureza para moer grãos e acionar equipamentos simples."
-    }),
-    mk("mercado", {
-      nome: "Mercado", emoji: "🧺", era: 0, custo: 80, cor: "#e8c07a", empregos: 3, prod: 4, bem: 2,
-      info: "O crescimento do comércio aumentou a procura por mercadorias e ajudou a criar as condições para a industrialização."
-    }),
-    mk("parque", {
-      nome: "Praça e parque", emoji: "🌳", era: 0, custo: 50, cor: "#4fae5f", bem: 3, poluicao: -2,
-      info: "Praças e áreas verdes ajudam a melhorar a qualidade do ar e a vida das pessoas nas cidades."
-    }),
+    mk("casa", { nome: "Casa", emoji: "🏠", era: 0, custo: 40, cor: "#e7c9a0", moradia: 4, bem: 1,
+      info: "No início da industrialização, a maior parte das pessoas vivia no campo ou em pequenas vilas. As cidades industriais cresceram com a migração de gente em busca de trabalho." }),
+    mk("oficina", { wiki: "en:Workshop", nome: "Oficina artesanal", emoji: "🔨", era: 0, custo: 70, cor: "#c98a4b", empregos: 4, prod: 5, poluicao: 1,
+      info: "Nas oficinas, artesãos dominavam várias etapas da produção com ferramentas manuais. A produção era pequena e lenta." }),
+    mk("moinho", { wiki: "en:Watermill", nome: "Moinho de água", emoji: "⚙️", era: 0, custo: 90, cor: "#e6d3a3", empregos: 3, prod: 6,
+      info: "Moinhos de água e de vento aproveitavam a energia da natureza para moer grãos e acionar equipamentos simples." }),
+    mk("mercado", { nome: "Mercado", emoji: "🧺", era: 0, custo: 80, cor: "#e8c07a", empregos: 3, prod: 4, bem: 2,
+      info: "O crescimento do comércio aumentou a procura por mercadorias e ajudou a criar as condições para a industrialização." }),
+    mk("parque", { nome: "Praça e parque", emoji: "🌳", era: 0, custo: 50, cor: "#4fae5f", bem: 3, poluicao: -2,
+      info: "Praças e áreas verdes ajudam a melhorar a qualidade do ar e a vida das pessoas nas cidades." }),
 
-    mk("fabrica_vapor", {
-      nome: "Fábrica a vapor", emoji: "🏭", era: 1, custo: 160, cor: "#9a4f3c", empregos: 14, prod: 22, poluicao: 6, bem: -3,
-      info: "A máquina a vapor, aperfeiçoada por James Watt, passou a movimentar fábricas têxteis. O trabalho seguia o ritmo das máquinas e do relógio."
-    }),
-    mk("estacao", {
-      nome: "Estação ferroviária", emoji: "🚂", era: 1, custo: 140, cor: "#d9c9a8", empregos: 6, prod: 12, poluicao: 2,
-      info: "As ferrovias aceleraram o transporte de matérias-primas e mercadorias e aproximaram cidades e regiões."
-    }),
-    mk("vila", {
-      nome: "Vila operária", emoji: "🏘️", era: 1, custo: 90, cor: "#a67b5b", moradia: 10, bem: -2,
-      info: "Muitos trabalhadores viviam em moradias apertadas e com pouca infraestrutura nas cidades industriais do século XIX."
-    }),
+    mk("fabrica_vapor", { wiki: "en:Cotton_mill", nome: "Fábrica a vapor", emoji: "🏭", era: 1, custo: 160, cor: "#9a4f3c", empregos: 14, prod: 22, poluicao: 6, bem: -3,
+      info: "A máquina a vapor, aperfeiçoada por James Watt, passou a movimentar fábricas têxteis. O trabalho seguia o ritmo das máquinas e do relógio." }),
+    mk("estacao", { wiki: "en:Train_station", nome: "Estação ferroviária", emoji: "🚂", era: 1, custo: 140, cor: "#d9c9a8", empregos: 6, prod: 12, poluicao: 2,
+      info: "As ferrovias aceleraram o transporte de matérias-primas e mercadorias e aproximaram cidades e regiões." }),
+    mk("vila", { nome: "Vila operária", emoji: "🏘️", era: 1, custo: 90, cor: "#a67b5b", moradia: 10, bem: -2,
+      info: "Muitos trabalhadores viviam em moradias apertadas e com pouca infraestrutura nas cidades industriais do século XIX." }),
 
-    mk("usina", {
-      nome: "Usina elétrica", emoji: "⚡", era: 2, custo: 220, cor: "#6e7fa3", empregos: 6, energia: 30, poluicao: 7,
-      info: "A eletricidade permitiu levar energia a fábricas e casas. No início, grande parte dela vinha da queima de carvão."
-    }),
-    mk("linha_montagem", {
-      nome: "Linha de montagem", emoji: "🚗", era: 2, custo: 260, cor: "#4d6a8f", empregos: 24, prod: 48, energia: -12, poluicao: 5, bem: -2,
-      info: "Com a linha de montagem, Henry Ford ampliou a produção em massa: cada trabalhador fazia uma etapa repetitiva do trabalho."
-    }),
-    mk("escola", {
-      nome: "Escola técnica", emoji: "📘", era: 2, custo: 120, cor: "#f0d8a0", empregos: 3, qual: 4, bem: 3,
-      info: "Fábricas mais complexas exigiam trabalhadores com formação técnica, e as escolas profissionalizantes ganharam importância."
-    }),
-    mk("bairro", {
-      nome: "Bairro planejado", emoji: "🏙️", era: 2, custo: 140, cor: "#d7b48c", moradia: 14, energia: -2, bem: 1,
-      info: "O crescimento das cidades industriais exigiu planejamento de moradia, transporte e saneamento."
-    }),
+    mk("usina", { wiki: "en:Power_station", nome: "Usina elétrica", emoji: "⚡", era: 2, custo: 220, cor: "#a36e77", empregos: 6, energia: 30, poluicao: 7,
+      info: "A eletricidade permitiu levar energia a fábricas e casas. No início, grande parte dela vinha da queima de carvão." }),
+    mk("linha_montagem", { wiki: "en:Assembly_line", nome: "Linha de montagem", emoji: "🚗", era: 2, custo: 260, cor: "#8f5f4d", empregos: 24, prod: 48, energia: -12, poluicao: 5, bem: -2,
+      info: "Com a linha de montagem, Henry Ford ampliou a produção em massa: cada trabalhador fazia uma etapa repetitiva do trabalho." }),
+    mk("escola", { nome: "Escola técnica", emoji: "📘", era: 2, custo: 120, cor: "#f0d8a0", empregos: 3, qual: 4, bem: 3,
+      info: "Fábricas mais complexas exigiam trabalhadores com formação técnica, e as escolas profissionalizantes ganharam importância." }),
+    mk("bairro", { nome: "Bairro planejado", emoji: "🏙️", era: 2, custo: 140, cor: "#d7b48c", moradia: 14, energia: -2, bem: 1,
+      info: "O crescimento das cidades industriais exigiu planejamento de moradia, transporte e saneamento." }),
 
-    mk("fabrica_robo", {
-      nome: "Fábrica automatizada", emoji: "🤖", era: 3, custo: 380, cor: "#cfd8e8", empregos: 14, prod: 95, energia: -20, poluicao: 4, exigeQual: 6,
-      info: "Robôs industriais executam tarefas repetitivas ou perigosas, mas exigem trabalhadores qualificados para programar e manter as máquinas."
-    }),
-    mk("centro_comp", {
-      nome: "Centro de computação", emoji: "💻", era: 3, custo: 300, cor: "#5e8fe0", empregos: 12, prod: 55, energia: -8, exigeQual: 3, bem: 1,
-      info: "Computadores mudaram escritórios e fábricas: controle de estoque, projetos e comunicação ficaram muito mais rápidos."
-    }),
-    mk("centro_senai", {
-      nome: "Centro de formação", emoji: "🎓", era: 3, custo: 220, cor: "#3fd2a0", empregos: 5, qual: 8, energia: -4, bem: 4,
-      info: "A formação profissional prepara pessoas para novas tecnologias. No Brasil, instituições como o SENAI (criado em 1942) cumprem esse papel."
-    }),
+    mk("fabrica_robo", { wiki: "en:Industrial_robot", nome: "Fábrica automatizada", emoji: "🤖", era: 3, custo: 380, cor: "#e8cfd3", empregos: 14, prod: 95, energia: -20, poluicao: 4, exigeQual: 6,
+      info: "Robôs industriais executam tarefas repetitivas ou perigosas, mas exigem trabalhadores qualificados para programar e manter as máquinas." }),
+    mk("centro_comp", { nome: "Centro de computação", emoji: "💻", era: 3, custo: 300, cor: "#e05e74", empregos: 12, prod: 55, energia: -8, exigeQual: 3, bem: 1,
+      info: "Computadores mudaram escritórios e fábricas: controle de estoque, projetos e comunicação ficaram muito mais rápidos." }),
+    mk("centro_senai", { nome: "Centro de formação", emoji: "🎓", era: 3, custo: 220, cor: "#d2663f", empregos: 5, qual: 8, energia: -4, bem: 4,
+      info: "A formação profissional prepara pessoas para novas tecnologias. No Brasil, instituições como o SENAI (criado em 1942) cumprem esse papel." }),
 
-    mk("datacenter", {
-      nome: "Data center de IA", emoji: "🖥️", era: 4, custo: 520, cor: "#2b2f5a", empregos: 10, prod: 150, energia: -30, poluicao: 2, exigeQual: 10,
-      info: "Data centers armazenam e processam os dados usados por IA e serviços digitais, e consomem muita energia."
-    }),
-    mk("solar", {
-      nome: "Usina solar", emoji: "☀️", era: 4, custo: 300, cor: "#2d7be0", empregos: 3, energia: 28, bem: 1,
-      info: "A energia solar gera eletricidade com baixa poluição local, ajudando a conciliar tecnologia e meio ambiente."
-    }),
-    mk("fabrica40", {
-      nome: "Fábrica 4.0", emoji: "🌐", era: 4, custo: 600, cor: "#26345f", empregos: 20, prod: 130, energia: -22, poluicao: 1, exigeQual: 8,
-      info: "Na Indústria 4.0, sensores, internet das coisas e análise de dados conectam máquinas e ajudam a identificar falhas em tempo real."
-    })
+    mk("datacenter", { wiki: "en:Data_center", nome: "Data center de IA", emoji: "🖥️", era: 4, custo: 520, cor: "#632f38", empregos: 10, prod: 150, energia: -30, poluicao: 2, exigeQual: 10,
+      info: "Data centers armazenam e processam os dados usados por IA e serviços digitais, e consomem muita energia." }),
+    mk("solar", { wiki: "en:Photovoltaic_power_station", nome: "Usina solar", emoji: "☀️", era: 4, custo: 300, cor: "#e05d2d", empregos: 3, energia: 28, bem: 1,
+      info: "A energia solar gera eletricidade com baixa poluição local, ajudando a conciliar tecnologia e meio ambiente." }),
+    mk("fabrica40", { wiki: "en:Industry_4.0", nome: "Fábrica 4.0", emoji: "🌐", era: 4, custo: 600, cor: "#692a34", empregos: 20, prod: 130, energia: -22, poluicao: 1, exigeQual: 8,
+      info: "Na Indústria 4.0, sensores, internet das coisas e análise de dados conectam máquinas e ajudam a identificar falhas em tempo real." })
   ];
   const T = Object.fromEntries(LISTA.map(t => [t.id, t]));
 
   /* ---------- eras e objetivos ---------- */
   const ERAS = [
-    { nome: "Antes das máquinas", periodo: "até c. 1760", cor: "#8b5cf6", ceu: ["#c7e3ff", "#fff1d6"], ceuEscuro: ["#79c3e8", "#fbe6c2"], terreno: "#56c068", custo: 260 },
-    {
-      nome: "1ª Revolução Industrial", periodo: "c. 1760–1850", cor: "#f97316", ceu: ["#ddd6f0", "#f7e1c8"], ceuEscuro: ["#8d867f", "#dcc7a6"], terreno: "#7fb15c", custo: 700,
-      intro: "A máquina a vapor e o carvão mudam a produção. Surgem as fábricas, as estações ferroviárias e as vilas operárias. Mas atenção: a fumaça cresce e as moradias ficam apertadas."
-    },
-    {
-      nome: "2ª Revolução Industrial", periodo: "c. 1870–1914", cor: "#06b6d4", ceu: ["#c4b5fd", "#fed7aa"], ceuEscuro: ["#4a3b78", "#f29a5c"], terreno: "#6fa56b", custo: 1600,
-      intro: "Eletricidade, petróleo e aço. A linha de montagem permite produzir em massa, mas as fábricas agora precisam de energia. Construa usinas e invista em formação técnica."
-    },
-    {
-      nome: "3ª Revolução Industrial", periodo: "c. 1950–2000", cor: "#7c3aed", ceu: ["#a5f3fc", "#ede9fe"], ceuEscuro: ["#1f4a8a", "#7fd6ef"], terreno: "#5fb07a", custo: 3600,
-      intro: "Computadores e robôs chegam às fábricas. A automação eleva a produção, mas exige qualificação: sem pessoas preparadas, as máquinas rendem menos e o desemprego cresce."
-    },
-    {
-      nome: "4ª Revolução Industrial", periodo: "século XXI", cor: "#d946ef", ceu: ["#c7d2fe", "#f5d0fe"], ceuEscuro: ["#120a3d", "#b04cff"], terreno: "#4fc29a", custo: 0,
-      intro: "Inteligência artificial, sensores e dados conectam tudo. Os data centers consomem muita energia: use fontes limpas, cuide das pessoas e mostre que tecnologia e bem-estar podem andar juntos."
-    }
+    { nome: "Antes das máquinas", periodo: "até c. 1760", cor: "#d9627d", ceu: ["#ffd6c7", "#fff1d6"], ceuEscuro: ["#e89779", "#fbe6c2"], terreno: "#56c068", custo: 260 },
+    { nome: "1ª Revolução Industrial", periodo: "c. 1760–1850", cor: "#ff5825", ceu: ["#f0d6da", "#f7e1c8"], ceuEscuro: ["#8d867f", "#dcc7a6"], terreno: "#7fb15c", custo: 700,
+      intro: "A máquina a vapor e o carvão mudam a produção. Surgem as fábricas, as estações ferroviárias e as vilas operárias. Mas atenção: a fumaça cresce e as moradias ficam apertadas." },
+    { nome: "2ª Revolução Industrial", periodo: "c. 1870–1914", cor: "#ff8a5e", ceu: ["#e8a39b", "#fed7aa"], ceuEscuro: ["#7b3d47", "#f29a5c"], terreno: "#6fa56b", custo: 1600,
+      intro: "Eletricidade, petróleo e aço. A linha de montagem permite produzir em massa, mas as fábricas agora precisam de energia. Construa usinas e invista em formação técnica." },
+    { nome: "3ª Revolução Industrial", periodo: "c. 1950–2000", cor: "#b8304a", ceu: ["#fcbca5", "#ffece6"], ceuEscuro: ["#8f2033", "#ef9d7f"], terreno: "#5fb07a", custo: 3600,
+      intro: "Computadores e robôs chegam às fábricas. A automação eleva a produção, mas exige qualificação: sem pessoas preparadas, as máquinas rendem menos e o desemprego cresce." },
+    { nome: "4ª Revolução Industrial", periodo: "século XXI", cor: "#f0405a", ceu: ["#fec7d0", "#fdd1d9"], ceuEscuro: ["#520e19", "#ff4c6a"], terreno: "#c26e4f", custo: 0,
+      intro: "Inteligência artificial, sensores e dados conectam tudo. Os data centers consomem muita energia: use fontes limpas, cuide das pessoas e mostre que tecnologia e bem-estar podem andar juntos." }
   ];
   const q = (t, v, m, inv, un) => ({ t, v, m, inv: !!inv, un: un || "" });
   const OBJS = [
@@ -212,63 +168,51 @@
   /* ---------- eventos educativos ---------- */
   const addMod = (tipo, v, dur) => S.mods.push({ tipo, v, ate: S.tick + dur });
   const EVENTOS = [
-    {
-      id: "greve", cond: s => s.era >= 1 && (s.st.C.fabrica_vapor + s.st.C.linha_montagem + s.st.C.fabrica_robo + s.st.C.fabrica40) >= 1, emoji: "✊",
+    { id: "greve", cond: s => s.era >= 1 && (s.st.C.fabrica_vapor + s.st.C.linha_montagem + s.st.C.fabrica_robo + s.st.C.fabrica40) >= 1, emoji: "✊",
       titulo: "Greve de operários",
       texto: "Os trabalhadores das fábricas cruzam os braços. Reclamam de jornadas longas, salários baixos e condições de trabalho difíceis.",
       fato: "Greves e sindicatos foram decisivos para conquistar jornadas menores, salários melhores e direitos trabalhistas.",
       opcoes: [
         { t: "Negociar melhorias", sub: "−80 de capital • bem-estar +10 por um tempo", fn: () => { S.cap = Math.max(0, S.cap - 80); addMod("bem", 10, 20); return "Diálogo e melhorias acalmaram os operários."; } },
         { t: "Ignorar o protesto", sub: "Produção −50% e bem-estar −10 por um tempo", fn: () => { S.greve = 12; addMod("bem", -10, 14); return "A greve paralisou parte da produção."; } }
-      ]
-    },
-    {
-      id: "fumaca", cond: s => s.st.pol >= 12, emoji: "🌫️",
+      ] },
+    { id: "fumaca", cond: s => s.st.pol >= 12, emoji: "🌫️",
       titulo: "Fumaça sobre a cidade",
       texto: "A queima de carvão e as chaminés deixam o ar pesado. Moradores reclamam de tosse e de roupas sujas.",
       fato: "Nas cidades industriais do século XIX, a poluição do ar e dos rios foi um dos primeiros grandes problemas ambientais.",
       opcoes: [
         { t: "Instalar filtros e plantar árvores", sub: "−100 de capital • poluição −3 de forma permanente", fn: () => { S.cap = Math.max(0, S.cap - 100); S.poluBonus -= 3; return "Os filtros e as árvores melhoraram o ar."; } },
         { t: "Ignorar por enquanto", sub: "Bem-estar −8 por um tempo e −2 habitantes", fn: () => { addMod("bem", -8, 15); S.pop = Math.max(0, S.pop - 2); return "Algumas famílias deixaram a cidade."; } }
-      ]
-    },
-    {
-      id: "migrantes", cond: s => s.era >= 1 && s.st.housing >= s.pop + 6 && s.st.jobs >= s.pop + 4, emoji: "🚶",
+      ] },
+    { id: "migrantes", cond: s => s.era >= 1 && s.st.housing >= s.pop + 6 && s.st.jobs >= s.pop + 4, emoji: "🚶",
       titulo: "Migrantes chegam do campo",
       texto: "Famílias do interior chegam à cidade em busca de emprego nas fábricas.",
       fato: "A migração do campo para as cidades foi uma das maiores mudanças sociais da industrialização.",
       opcoes: [
         { t: "Oferecer moradia e acolhida", sub: "−50 de capital • +6 habitantes e bem-estar +4 por um tempo", fn: () => { S.cap = Math.max(0, S.cap - 50); S.pop += 6; addMod("bem", 4, 15); return "Os recém-chegados foram bem recebidos."; } },
         { t: "Deixar que se virem sozinhos", sub: "+6 habitantes, mas bem-estar −8 por um tempo", fn: () => { S.pop += 6; addMod("bem", -8, 15); return "Muitos improvisaram moradias precárias."; } }
-      ]
-    },
-    {
-      id: "automacao", cond: s => s.st.C.fabrica_robo >= 1, emoji: "🤖",
+      ] },
+    { id: "automacao", cond: s => s.st.C.fabrica_robo >= 1, emoji: "🤖",
       titulo: "A automação chegou",
       texto: "Os robôs fazem parte do trabalho que antes era manual. Alguns funcionários temem perder o emprego.",
       fato: "Cada nova tecnologia muda as profissões. Requalificar trabalhadores ajuda as pessoas a acompanharem as mudanças.",
       opcoes: [
         { t: "Requalificar a equipe", sub: "−120 de capital • qualificação +3 de forma permanente", fn: () => { S.cap = Math.max(0, S.cap - 120); S.qualBonus += 3; return "A equipe aprendeu a operar as novas máquinas."; } },
         { t: "Dispensar parte da equipe", sub: "+150 de capital, −4 habitantes e bem-estar −8 por um tempo", fn: () => { S.cap += 150; S.pop = Math.max(0, S.pop - 4); addMod("bem", -8, 20); return "A cidade economizou, mas perdeu moradores e confiança."; } }
-      ]
-    },
-    {
-      id: "apagao", cond: s => s.era >= 2 && s.st.demE > s.st.supE, emoji: "💡",
+      ] },
+    { id: "apagao", cond: s => s.era >= 2 && s.st.demE > s.st.supE, emoji: "💡",
       titulo: "Apagão!",
       texto: "A demanda de energia superou a oferta. Máquinas desaceleram e a cidade fica no escuro por algumas horas.",
       fato: "Com a eletricidade, fábricas e cidades passaram a depender de redes elétricas. Planejar a geração de energia é essencial.",
-      opcoes: [{ t: "Entendi: vou construir mais energia", sub: "Construa usinas elétricas ou solares", fn: () => "Hora de investir em geração de energia." }]
-    },
-    {
-      id: "feira", cond: s => s.era >= 1, emoji: "💡",
+      opcoes: [{ t: "Entendi: vou construir mais energia", sub: "Construa usinas elétricas ou solares", fn: () => "Hora de investir em geração de energia." }] },
+    { id: "feira", cond: s => s.era >= 1, emoji: "💡",
       titulo: "Feira de invenções",
       texto: "Inventores apresentam novas máquinas e processos. Apoiar novas ideias pode trazer retorno, mas nem sempre dá certo.",
       fato: "Muitas invenções da industrialização, como o tear mecânico e o telefone, vieram de anos de tentativas e erros.",
       opcoes: [
         { t: "Patrocinar os inventores", sub: "−90 de capital • chance de ganhar +260", fn: () => { S.cap = Math.max(0, S.cap - 90); if (Math.random() < 0.6) { S.cap += 260; return "Uma invenção deu certo e rendeu lucros!"; } return "Desta vez a ideia não deu retorno."; } },
         { t: "Guardar o dinheiro", sub: "Nada muda", fn: () => "Você preferiu não arriscar." }
-      ]
-    }
+      ] }
   ];
 
   function sortearEvento() {
@@ -414,10 +358,23 @@
     if (t.exigeQual) e.push(`🎓 exige ${t.exigeQual} de qualificação`);
     return e;
   }
+  let fotoTok = 0;
   function mostrarInfo(id) {
     const t = T[id];
-    $("info").innerHTML = `<div class="info-topo"><span class="info-emo">${t.emoji}</span><div><b>${t.nome}</b><small style="color:color-mix(in srgb,${ERAS[t.era].cor} 55%,#2e1065)">${ERAS[t.era].nome} • 💰 ${t.custo}</small></div></div>
+    $("info").innerHTML = `<figure class="info-foto" hidden><img alt="" decoding="async" referrerpolicy="no-referrer"><figcaption></figcaption></figure>`+`<div class="info-topo"><span class="info-emo">${t.emoji}</span><div><b>${t.nome}</b><small style="color:color-mix(in srgb,${ERAS[t.era].cor} 55%,#651424)">${ERAS[t.era].nome} • 💰 ${t.custo}</small></div></div>
       <div class="info-chips">${efeitos(t).map(x => `<em>${x}</em>`).join("")}</div><p>${t.info}</p>`;
+    if (t.wiki && window.FotosWiki) {
+      const tok = ++fotoTok;
+      window.FotosWiki.resolver(t.wiki, 420).then(r => {
+        if (!r || tok !== fotoTok) return;
+        const fig = $("info").querySelector(".info-foto"); if (!fig) return;
+        const im = fig.querySelector("img"); im.alt = "Foto real: " + t.nome;
+        im.addEventListener("load", () => { fig.hidden = false; }, { once: true });
+        im.src = r.url;
+        const a = document.createElement("a"); a.href = r.pagina; a.target = "_blank"; a.rel = "noopener"; a.textContent = r.credito;
+        fig.querySelector("figcaption").appendChild(a);
+      });
+    }
   }
 
   /* ---------- final ---------- */
@@ -493,7 +450,7 @@
     ctx.fillStyle = "#47b863"; ctx.beginPath(); ctx.arc(c[0] - 2.5, c[1] - 3, 5.5, 0, 7); ctx.fill();
   }
   function emoji(txt, x, y, s) { ctx.font = `${s}px "Segoe UI Emoji","Apple Color Emoji","Noto Color Emoji",sans-serif`; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillText(txt, x, y); }
-  const corJanela = () => S.era <= 1 ? "#ffd98a" : S.era === 2 ? "#ffe9a0" : S.era === 3 ? "#bfeaff" : "#7fffe9";
+  const corJanela = () => S.era <= 1 ? "#ffd98a" : S.era === 2 ? "#ffe9a0" : S.era === 3 ? "#ffd0bf" : "#ffa17f";
 
   const DRAW = {
     casa(o, t) { caixa(o, 0, 0, .26, .26, 0, 16, t.cor); piramide(o, 0, 0, .31, .31, 16, 13, "#b5523b"); janelas(o, 0, 0, .26, .26, 0, 16, 1, 1, corJanela()); },
@@ -503,7 +460,7 @@
       const c = P(o, .17, 0, 14); ctx.save(); ctx.translate(c[0], c[1]); ctx.transform(1, -.5, 0, 1, 0, 0); ctx.rotate(tt * .9);
       ctx.strokeStyle = "#5b3b22"; ctx.lineWidth = 2.4; ctx.beginPath();
       for (let i = 0; i < 4; i++) { const a = i * Math.PI / 2; ctx.moveTo(0, 0); ctx.lineTo(Math.cos(a) * 13, Math.sin(a) * 13); }
-      ctx.stroke(); ctx.fillStyle = "#4aa0d8"; for (let i = 0; i < 4; i++) { const a = i * Math.PI / 2; ctx.fillRect(Math.cos(a) * 13 - 3, Math.sin(a) * 13 - 3, 6, 6); } ctx.restore();
+      ctx.stroke(); ctx.fillStyle = "#d8704a"; for (let i = 0; i < 4; i++) { const a = i * Math.PI / 2; ctx.fillRect(Math.cos(a) * 13 - 3, Math.sin(a) * 13 - 3, 6, 6); } ctx.restore();
       const r = P(o, .3, .22, 0); ctx.fillStyle = "rgba(90,180,240,.6)"; ctx.beginPath(); ctx.ellipse(r[0], r[1] + 2, 10, 4, 0, 0, 7); ctx.fill();
     },
     mercado(o, t) {
@@ -535,7 +492,7 @@
       chamine(o, -.2, -.15, 26, .4);
     },
     usina(o, t) {
-      caixa(o, -.1, .05, .3, .26, 0, 22, t.cor); caixa(o, -.1, .05, .33, .29, 22, 25, "#3b4660"); janelas(o, -.1, .05, .3, .26, 0, 22, 3, 1, "#ffe27a", true);
+      caixa(o, -.1, .05, .3, .26, 0, 22, t.cor); caixa(o, -.1, .05, .33, .29, 22, 25, "#663e45"); janelas(o, -.1, .05, .3, .26, 0, 22, 3, 1, "#ffe27a", true);
       chamine(o, .25, -.22, 54, 1.5); chamine(o, .08, -.3, 46, 1.2);
       const p = P(o, -.1, .05, 36 + Math.sin(tt * 3) * 3);
       const g = ctx.createRadialGradient(p[0], p[1], 2, p[0], p[1], 20); g.addColorStop(0, "rgba(255,226,90,.65)"); g.addColorStop(1, "rgba(255,226,90,0)");
@@ -543,22 +500,22 @@
     },
     linha_montagem(o, t) {
       caixa(o, 0, 0, .42, .32, 0, 22, t.cor); janelas(o, 0, 0, .42, .32, 0, 22, 4, 1, corJanela(), true);
-      poly([P(o, -.4, -.06, 22), P(o, .4, -.06, 22), P(o, .4, .06, 22), P(o, -.4, .06, 22)], "#2b3447");
+      poly([P(o, -.4, -.06, 22), P(o, .4, -.06, 22), P(o, .4, .06, 22), P(o, -.4, .06, 22)], "#523137");
       const x = ((tt * .35) % 1) * .8 - .4; caixa(o, x, 0, .08, .05, 22, 29, "#e5483b"); caixa(o, x, 0, .04, .04, 29, 32, "#ffd23f");
       chamine(o, -.3, -.24, 36, .9);
     },
     escola(o, t) {
-      caixa(o, 0, 0, .34, .26, 0, 24, t.cor); piramide(o, 0, 0, .38, .3, 24, 8, "#b24a4a"); janelas(o, 0, 0, .34, .26, 0, 24, 3, 2, "#9fd8ff");
-      const a = P(o, .25, -.2, 24), b = P(o, .25, -.2, 50); ctx.strokeStyle = "#cfcfd8"; ctx.lineWidth = 1.6; ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); ctx.stroke();
-      const w = Math.sin(tt * 4) * 2; ctx.fillStyle = "#33e1ff"; ctx.beginPath(); ctx.moveTo(b[0], b[1]); ctx.lineTo(b[0] + 13, b[1] + 3 + w); ctx.lineTo(b[0], b[1] + 8); ctx.fill();
+      caixa(o, 0, 0, .34, .26, 0, 24, t.cor); piramide(o, 0, 0, .38, .3, 24, 8, "#b24a4a"); janelas(o, 0, 0, .34, .26, 0, 24, 3, 2, "#ffb99f");
+      const a = P(o, .25, -.2, 24), b = P(o, .25, -.2, 50); ctx.strokeStyle = "#d8cfd0"; ctx.lineWidth = 1.6; ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); ctx.stroke();
+      const w = Math.sin(tt * 4) * 2; ctx.fillStyle = "#ff6933"; ctx.beginPath(); ctx.moveTo(b[0], b[1]); ctx.lineTo(b[0] + 13, b[1] + 3 + w); ctx.lineTo(b[0], b[1] + 8); ctx.fill();
     },
     bairro(o, t) {
       for (const [x, y] of [[-.24, -.2], [.24, -.14], [0, .24]]) { caixa(o, x, y, .14, .14, 0, 15, t.cor); piramide(o, x, y, .17, .17, 15, 9, "#c46a4a"); janelas(o, x, y, .14, .14, 0, 15, 1, 1, corJanela()); }
       const l = P(o, .02, -.12, 14); ctx.fillStyle = "rgba(255,230,140,.9)"; ctx.beginPath(); ctx.arc(l[0], l[1], 2.4, 0, 7); ctx.fill();
     },
     fabrica_robo(o, t) {
-      caixa(o, 0, 0, .4, .32, 0, 30, t.cor); janelas(o, 0, 0, .4, .32, 0, 30, 3, 1, "#7ad7ff");
-      caixa(o, 0, 0, .43, .35, 30, 32, "#3a8ad6");
+      caixa(o, 0, 0, .4, .32, 0, 30, t.cor); janelas(o, 0, 0, .4, .32, 0, 30, 3, 1, "#ff9d7a");
+      caixa(o, 0, 0, .43, .35, 30, 32, "#d6643a");
       const b = P(o, -.05, 0, 32), a = Math.sin(tt * 1.6) * .9;
       const e1 = [b[0] + Math.cos(-1.1 + a * .4) * 16, b[1] + Math.sin(-1.1 + a * .4) * 16], e2 = [e1[0] + Math.cos(.2 + a) * 15, e1[1] + Math.sin(.2 + a) * 11];
       ctx.strokeStyle = "#ff8a3d"; ctx.lineWidth = 4; ctx.lineCap = "round"; ctx.beginPath(); ctx.moveTo(b[0], b[1]); ctx.lineTo(e1[0], e1[1]); ctx.lineTo(e2[0], e2[1]); ctx.stroke();
@@ -566,36 +523,36 @@
       chamine(o, .3, -.25, 38, .5);
     },
     centro_comp(o, t) {
-      caixa(o, 0, 0, .24, .24, 0, 58, t.cor); janelas(o, 0, 0, .24, .24, 0, 58, 2, 6, "#bff3ff", true);
-      const a = P(o, 0, 0, 58), b = P(o, 0, 0, 74); ctx.strokeStyle = "#dfe6ff"; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); ctx.stroke();
-      ctx.fillStyle = Math.sin(tt * 5) > 0 ? "#ff4f9a" : "#7a2a4a"; ctx.beginPath(); ctx.arc(b[0], b[1], 2.4, 0, 7); ctx.fill();
+      caixa(o, 0, 0, .24, .24, 0, 58, t.cor); janelas(o, 0, 0, .24, .24, 0, 58, 2, 6, "#ffd0bf", true);
+      const a = P(o, 0, 0, 58), b = P(o, 0, 0, 74); ctx.strokeStyle = "#fde1e5"; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); ctx.stroke();
+      ctx.fillStyle = Math.sin(tt * 5) > 0 ? "#ff4f78" : "#802c3f"; ctx.beginPath(); ctx.arc(b[0], b[1], 2.4, 0, 7); ctx.fill();
     },
     centro_senai(o, t) {
-      caixa(o, 0, 0, .36, .28, 0, 28, t.cor); caixa(o, 0, 0, .39, .31, 28, 31, "#1b8a68"); janelas(o, 0, 0, .36, .28, 0, 28, 3, 2, "#e9fff7");
+      caixa(o, 0, 0, .36, .28, 0, 28, t.cor); caixa(o, 0, 0, .39, .31, 28, 31, "#903b1c"); janelas(o, 0, 0, .36, .28, 0, 28, 3, 2, "#feefea");
       const p = P(o, 0, 0, 52 + Math.sin(tt * 2) * 2); emoji("🎓", p[0], p[1], 22);
     },
     datacenter(o, t) {
       caixa(o, 0, 0, .4, .34, 0, 34, t.cor);
       for (let i = 0; i < 4; i++) for (let j = 0; j < 3; j++) {
         const on = Math.sin(tt * (2 + i) + j * 2.3 + i) > 0, a = P(o, -.34 + i * .22, .34, 6 + j * 8);
-        ctx.fillStyle = on ? (j % 2 ? "#ff4f9a" : "#33e1ff") : "#2d2a55"; ctx.fillRect(a[0], a[1], 4, 3);
+        ctx.fillStyle = on ? (j % 2 ? "#ff4f78" : "#ff6933") : "#5f2f37"; ctx.fillRect(a[0], a[1], 4, 3);
       }
-      caixa(o, -.15, -.1, .1, .1, 34, 40, "#8a90b0"); caixa(o, .15, .08, .1, .1, 34, 40, "#8a90b0");
+      caixa(o, -.15, -.1, .1, .1, 34, 40, "#b08a90"); caixa(o, .15, .08, .1, .1, 34, 40, "#b08a90");
     },
     solar(o, t) {
       poly([P(o, -.5, -.5, 0), P(o, .5, -.5, 0), P(o, .5, .5, 0), P(o, -.5, .5, 0)], "#5d7a59");
       for (let i = 0; i < 3; i++) for (let j = 0; j < 2; j++) {
         const cx = -.3 + i * .3, cy = -.22 + j * .42, z0 = 6, z1 = 14;
-        poly([P(o, cx - .12, cy - .17, z1), P(o, cx + .12, cy - .17, z1), P(o, cx + .12, cy + .17, z0), P(o, cx - .12, cy + .17, z0)], "#1f55b8", true);
+        poly([P(o, cx - .12, cy - .17, z1), P(o, cx + .12, cy - .17, z1), P(o, cx + .12, cy + .17, z0), P(o, cx - .12, cy + .17, z0)], "#b81f39", true);
         const g = ((tt * .5 + i * .2 + j * .1) % 1); const gx = cx - .12 + g * .24;
         poly([P(o, gx, cy - .17, z1), P(o, gx + .03, cy - .17, z1), P(o, gx + .03, cy + .17, z0), P(o, gx, cy + .17, z0)], "rgba(255,255,255,.55)");
       }
     },
     fabrica40(o, t) {
-      caixa(o, 0, 0, .4, .32, 0, 32, t.cor); janelas(o, 0, 0, .4, .32, 0, 32, 4, 2, "#7fffe9", true);
-      const cor = `rgba(51,225,255,${0.55 + Math.sin(tt * 3) * .3})`; ctx.strokeStyle = cor; ctx.lineWidth = 2; ctx.shadowColor = "#33e1ff"; ctx.shadowBlur = 10;
+      caixa(o, 0, 0, .4, .32, 0, 32, t.cor); janelas(o, 0, 0, .4, .32, 0, 32, 4, 2, "#ffa17f", true);
+      const cor = `rgba(51,225,255,${0.55 + Math.sin(tt * 3) * .3})`; ctx.strokeStyle = cor; ctx.lineWidth = 2; ctx.shadowColor = "#ff6933"; ctx.shadowBlur = 10;
       const pts = [P(o, -.4, .32, 32), P(o, .4, .32, 32), P(o, .4, -.32, 32)]; ctx.beginPath(); ctx.moveTo(pts[0][0], pts[0][1]); ctx.lineTo(pts[1][0], pts[1][1]); ctx.lineTo(pts[2][0], pts[2][1]); ctx.stroke(); ctx.shadowBlur = 0;
-      const a = P(o, .25, -.2, 32), b = P(o, .25, -.2, 58); ctx.strokeStyle = "#dfe6ff"; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); ctx.stroke();
+      const a = P(o, .25, -.2, 32), b = P(o, .25, -.2, 58); ctx.strokeStyle = "#fde1e5"; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); ctx.stroke();
       for (let k = 0; k < 3; k++) { const r = ((tt * .8 + k / 3) % 1); ctx.strokeStyle = `rgba(255,79,154,${1 - r})`; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(b[0], b[1], 3 + r * 16, 0, 7); ctx.stroke(); }
       const d = P(o, Math.cos(tt * .9) * .38, Math.sin(tt * .9) * .3, 60 + Math.sin(tt * 3) * 3); ctx.fillStyle = "#ffd23f"; ctx.beginPath(); ctx.arc(d[0], d[1], 3, 0, 7); ctx.fill(); ctx.fillStyle = "rgba(255,210,63,.35)"; ctx.beginPath(); ctx.arc(d[0], d[1], 7, 0, 7); ctx.fill();
     }
@@ -611,7 +568,7 @@
     atualizarCeu();
     const g = ctx.createLinearGradient(0, 0, 0, H); g.addColorStop(0, rgb2css(ceuAtual[0])); g.addColorStop(1, rgb2css(ceuAtual[1]));
     ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
-    if (S.era >= 2) { ctx.fillStyle = modoClaro() ? "#7c3aed" : "#fff"; estrelas.forEach(s => { ctx.globalAlpha = modoClaro() ? (S.era >= 4 ? .45 : S.era === 3 ? .15 : .2) : (S.era >= 4 ? .9 : S.era === 3 ? .25 : .35) * (0.5 + 0.5 * Math.sin(tt * 1.5 + s[2])); ctx.fillRect(s[0], s[1], 1.6, 1.6); }); ctx.globalAlpha = 1; }
+    if (S.era >= 2) { ctx.fillStyle = modoClaro() ? "#b8304a" : "#fff"; estrelas.forEach(s => { ctx.globalAlpha = modoClaro() ? (S.era >= 4 ? .45 : S.era === 3 ? .15 : .2) : (S.era >= 4 ? .9 : S.era === 3 ? .25 : .35) * (0.5 + 0.5 * Math.sin(tt * 1.5 + s[2])); ctx.fillRect(s[0], s[1], 1.6, 1.6); }); ctx.globalAlpha = 1; }
     const fumo = clamp(S.st.pol / 40, 0, .5);
     nuvens.forEach(n => {
       n.x += n.v * dtF; if (n.x > W + 120) n.x = -120;
@@ -623,7 +580,7 @@
   /* terreno */
   function desenharTerreno(x, y, i) {
     const o = tilePos(x, y), polu = clamp(S.st.pol / 40, 0, 1);
-    const c = mix(hex2rgb(ERAS[S.era].terreno), hex2rgb(modoClaro() ? "#9a8fb8" : "#8a7a5c"), polu * .8);
+    const c = mix(hex2rgb(ERAS[S.era].terreno), hex2rgb(modoClaro() ? "#b88f96" : "#8a7a5c"), polu * .8);
     const xadrez = (x + y) % 2 ? 1 : 0;
     const cor = rgb2css(c.map(v => v * (xadrez ? 0.93 : 1)));
     if (y === N - 1) poly([P(o, -.5, .5, 0), P(o, .5, .5, 0), P(o, .5, .5, -16), P(o, -.5, .5, -16)], "#5b3f2e", true);

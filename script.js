@@ -6,17 +6,17 @@
 
 document.documentElement.classList.add("js");
 
-/* ---------- 0) Tema: escuro, misto (alterna escuro e claro) ou claro ---------- */
+/* ---------- 0) Tema: escuro ou claro ---------- */
 (() => {
-  const CH = "tema-site", VALIDOS = ["escuro", "misto", "claro"];
+  const CH = "tema-site", VALIDOS = ["escuro", "claro"];
   const raiz = document.documentElement;
-  const atual = () => (VALIDOS.includes(raiz.dataset.tema) ? raiz.dataset.tema : "misto");
+  const atual = () => (VALIDOS.includes(raiz.dataset.tema) ? raiz.dataset.tema : "escuro");
   const aplicar = (t, salvar) => {
     raiz.dataset.tema = t;
     if (salvar) { try { localStorage.setItem(CH, t); } catch (e) { /* ignorar */ } }
     document.querySelectorAll(".tema-seletor button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.tema === t)));
     const meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.setAttribute("content", t === "claro" ? "#f5f3ff" : "#0a0720");
+    if (meta) meta.setAttribute("content", t === "claro" ? "#fff7f4" : "#390d14");
   };
   document.addEventListener("DOMContentLoaded", () => {
     aplicar(atual(), false);
@@ -45,8 +45,9 @@ const SVG_ATTR = 'viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke
 const modelos = [
   {
     id: "antes",
+    wiki: "en:Blacksmith",
     rotulo: "Antes das máquinas",
-    cor: "#8b5cf6",
+    cor: "#d9627d",
     x: "5%", y: "15%",
     arte: `<svg ${SVG_ATTR}>
       <path d="M22 66h60c7 0 12-5 14-12H38c-7 0-11 5-16 12z" fill="currentColor" fill-opacity=".18"/>
@@ -58,17 +59,18 @@ const modelos = [
     subtitulo: "Oficinas e manufaturas",
     titulo: "Antes das máquinas",
     texto: "Artesãos fabricavam produtos com ferramentas manuais, em oficinas ou em casa. Muitos dominavam várias etapas do trabalho, do início ao acabamento. Nas manufaturas, as tarefas começaram a ser divididas entre trabalhadores, mas a produção ainda dependia da força humana.",
-    destaques: [["Energia", "Força humana, animal, água e vento"], ["Organização", "Oficinas e manufaturas"], ["Limite", "Produção pequena e lenta"]],
+    destaques: [["Energia","Força humana, animal, água e vento"],["Organização","Oficinas e manufaturas"],["Limite","Produção pequena e lenta"]],
     tecnologia: "Ferramentas manuais, teares manuais, moinhos de água e de vento.",
     trabalho: "Aprendizes, oficiais e mestres. Em muitas cidades, as corporações de ofício organizavam as profissões.",
     impacto: "O crescimento do comércio aumentou a procura por mercadorias e criou as condições para a industrialização.",
-    marcos: ["Artesanato", "Manufaturas", "Corporações de ofício"],
-    link: ["conteudo.html", "Ver na linha do tempo ↗"]
+    marcos: ["Artesanato","Manufaturas","Corporações de ofício"],
+    link: ["conteudo.html","Ver na linha do tempo ↗"]
   },
   {
     id: "rev1",
+    wiki: "en:Spinning_jenny",
     rotulo: "Revolução Industrial 1",
-    cor: "#f97316",
+    cor: "#ff5825",
     x: "22%", y: "50%",
     arte: `<svg ${SVG_ATTR}>
       <rect x="14" y="48" width="62" height="26" rx="11" fill="currentColor" fill-opacity=".16"/>
@@ -83,17 +85,18 @@ const modelos = [
     subtitulo: "A era do vapor",
     titulo: "1ª Revolução Industrial",
     texto: "Começou na Grã-Bretanha e transformou a produção artesanal em produção mecanizada nas fábricas. A máquina a vapor, o carvão e a indústria têxtil mudaram o ritmo do trabalho e a paisagem das cidades.",
-    destaques: [["Onde começou", "Grã-Bretanha"], ["Energia", "Carvão e vapor"], ["Setor-chave", "Indústria têxtil"]],
+    destaques: [["Onde começou","Grã-Bretanha"],["Energia","Carvão e vapor"],["Setor-chave","Indústria têxtil"]],
     tecnologia: "Máquina a vapor, carvão, máquinas de fiar e tecer, locomotiva a vapor.",
     trabalho: "Migração do campo para as cidades, jornadas longas, baixos salários e trabalho infantil. O ludismo foi um protesto contra certas máquinas.",
     impacto: "A produção cresceu muito, mas surgiram conflitos sobre salários, segurança e condições de vida dos trabalhadores.",
-    marcos: ["Máquina a vapor de Watt", "Ferrovias", "Ludismo (c. 1811–1816)"],
-    link: ["conteudo.html", "Ver na linha do tempo ↗"]
+    marcos: ["Máquina a vapor de Watt","Ferrovias","Ludismo (c. 1811–1816)"],
+    link: ["conteudo.html","Ver na linha do tempo ↗"]
   },
   {
     id: "rev2",
+    wiki: "en:Incandescent_light_bulb",
     rotulo: "Revolução Industrial 2",
-    cor: "#06b6d4",
+    cor: "#ff8a5e",
     x: "41%", y: "8%",
     arte: `<svg ${SVG_ATTR}>
       <path d="M46 76c-9-6-13-15-13-25a27 27 0 0 1 54 0c0 10-4 19-13 25v8H46z" fill="currentColor" fill-opacity=".14"/>
@@ -105,17 +108,18 @@ const modelos = [
     subtitulo: "A era da eletricidade",
     titulo: "2ª Revolução Industrial",
     texto: "Eletricidade, petróleo e aço transformaram fábricas, transportes e comunicações. A linha de montagem permitiu produzir grandes quantidades de mercadorias padronizadas, e o trabalho ficou mais intenso e organizado.",
-    destaques: [["Energia", "Eletricidade e petróleo"], ["Material", "Aço"], ["Método", "Linha de montagem"]],
+    destaques: [["Energia","Eletricidade e petróleo"],["Material","Aço"],["Método","Linha de montagem"]],
     tecnologia: "Lâmpada elétrica, motor a combustão, telefone, telégrafo, aço e produtos químicos.",
     trabalho: "O taylorismo organizava e media as tarefas; o fordismo ampliou a produção em massa. Algumas funções se tornaram repetitivas.",
     impacto: "Sindicatos e movimentos de trabalhadores pressionaram por salários melhores, jornadas menores e direitos.",
-    marcos: ["Lâmpada incandescente (1879)", "Ford Modelo T (1908)", "Taylor e Ford"],
-    link: ["conteudo.html", "Ver na linha do tempo ↗"]
+    marcos: ["Lâmpada incandescente (1879)","Ford Modelo T (1908)","Taylor e Ford"],
+    link: ["conteudo.html","Ver na linha do tempo ↗"]
   },
   {
     id: "rev3",
+    wiki: "en:Industrial_robot",
     rotulo: "Revolução Industrial 3",
-    cor: "#7c3aed",
+    cor: "#b8304a",
     x: "58%", y: "48%",
     arte: `<svg ${SVG_ATTR}>
       <rect x="22" y="96" width="50" height="10" rx="3" fill="currentColor" fill-opacity=".2"/>
@@ -130,17 +134,18 @@ const modelos = [
     subtitulo: "A era digital e da automação",
     titulo: "3ª Revolução Industrial",
     texto: "A eletrônica, os computadores e as telecomunicações mudaram a indústria. Máquinas programáveis e robôs passaram a executar tarefas repetitivas ou perigosas com mais precisão, e o conhecimento técnico ganhou importância.",
-    destaques: [["Tecnologia", "Eletrônica e computadores"], ["Método", "Automação"], ["Desafio", "Qualificação profissional"]],
+    destaques: [["Tecnologia","Eletrônica e computadores"],["Método","Automação"],["Desafio","Qualificação profissional"]],
     tecnologia: "Transistor, computadores, controladores programáveis, robôs industriais e internet.",
     trabalho: "O toyotismo valorizou flexibilidade, redução de desperdícios e melhoria contínua. Algumas profissões foram transformadas ou substituídas.",
     impacto: "A produtividade aumentou, e aprender novas habilidades passou a ser parte da vida profissional.",
-    marcos: ["Robô industrial Unimate (1961)", "Computadores pessoais", "Toyotismo"],
-    link: ["conteudo.html", "Ver na linha do tempo ↗"]
+    marcos: ["Robô industrial Unimate (1961)","Computadores pessoais","Toyotismo"],
+    link: ["conteudo.html","Ver na linha do tempo ↗"]
   },
   {
     id: "rev4",
+    wiki: "en:Industry_4.0",
     rotulo: "Revolução Industrial 4",
-    cor: "#d946ef",
+    cor: "#f0405a",
     x: "77%", y: "12%",
     arte: `<svg ${SVG_ATTR}>
       <rect x="38" y="38" width="44" height="44" rx="7" fill="currentColor" fill-opacity=".14"/>
@@ -153,17 +158,18 @@ const modelos = [
     subtitulo: "A era dos sistemas conectados",
     titulo: "4ª Revolução Industrial",
     texto: "Inteligência artificial, internet das coisas, sensores e robótica avançada conectam máquinas, dados e sistemas. Fábricas inteligentes acompanham processos em tempo real e identificam falhas com mais rapidez.",
-    destaques: [["Tecnologia", "IA, IoT e sensores"], ["Oportunidade", "Novas profissões"], ["Desafio", "Uso responsável"]],
+    destaques: [["Tecnologia","IA, IoT e sensores"],["Oportunidade","Novas profissões"],["Desafio","Uso responsável"]],
     tecnologia: "Inteligência artificial, internet das coisas, computação em nuvem, robôs colaborativos e gêmeos digitais.",
     trabalho: "Surgem trabalho remoto, serviços por aplicativo e funções ligadas a dados. Muitas tarefas mudam e exigem atualização constante.",
     impacto: "Educação, proteção social e direitos trabalhistas ajudam a distribuir melhor os benefícios e a lidar com privacidade e desigualdade.",
-    marcos: ["Indústria 4.0 (termo de 2011)", "Internet das coisas", "Inteligência artificial"],
-    link: ["conteudo.html", "Ver na linha do tempo ↗"]
+    marcos: ["Indústria 4.0 (termo de 2011)","Internet das coisas","Inteligência artificial"],
+    link: ["conteudo.html","Ver na linha do tempo ↗"]
   },
   {
     id: "brasil",
+    wiki: "pt:Estrada_de_Ferro_Mauá",
     rotulo: "Indústria no Brasil",
-    cor: "#fb923c",
+    cor: "#ff7a50",
     x: "81%", y: "52%",
     arte: `<svg ${SVG_ATTR}>
       <path d="M14 100V62l20 12V62l20 12V62l20 12V100z" fill="currentColor" fill-opacity=".15"/>
@@ -176,12 +182,12 @@ const modelos = [
     subtitulo: "Industrialização nacional",
     titulo: "A indústria no Brasil",
     texto: "A industrialização brasileira ganhou força no século XX. Com Getúlio Vargas, houve incentivo à indústria de base, como a Companhia Siderúrgica Nacional. Depois de 1950, a indústria automobilística cresceu e novas fábricas chegaram ao país.",
-    destaques: [["Marco", "Indústria de base"], ["Expansão", "Setor automobilístico"], ["Questão atual", "Desenvolvimento desigual"]],
+    destaques: [["Marco","Indústria de base"],["Expansão","Setor automobilístico"],["Questão atual","Desenvolvimento desigual"]],
     tecnologia: "Siderurgia, petróleo, automóveis e, mais recentemente, aviação e indústria digital.",
     trabalho: "Cidades cresceram e muitas pessoas migraram do campo e de outras regiões para os polos industriais.",
     impacto: "O processo foi desigual entre regiões. Hoje o país combina setores modernos com desafios de infraestrutura, investimento e formação profissional.",
-    marcos: ["CSN (Volta Redonda)", "Era Vargas", "Indústria automobilística"],
-    link: ["conteudo.html#brasil", "Ver o Brasil na linha do tempo ↗"]
+    marcos: ["CSN (Volta Redonda)","Era Vargas","Indústria automobilística"],
+    link: ["conteudo.html#brasil","Ver o Brasil na linha do tempo ↗"]
   }
 ];
 if (window.EvolucaoCarros) modelos.push(window.EvolucaoCarros.modelo);
@@ -208,7 +214,7 @@ document.addEventListener("DOMContentLoaded", () => {
     b.style.setProperty("--d", `${i * 70}ms`);
     b.style.setProperty("--f", `${(i % 3) * 0.7}s`);
     b.setAttribute("aria-label", `${m.rotulo}: ver informações`);
-    b.innerHTML = `<span class="modelo-flutua"><span class="modelo-arte">${m.arte}</span></span><span class="modelo-rotulo">${m.rotulo}<i></i></span>`;
+    b.innerHTML = `<span class="modelo-flutua"><span class="modelo-arte">${m.arte}<img class="modelo-foto" alt="" decoding="async" referrerpolicy="no-referrer"></span></span><span class="modelo-rotulo">${m.rotulo}<i></i></span>`;
     lista.appendChild(b);
   });
 
@@ -224,9 +230,32 @@ document.addEventListener("DOMContentLoaded", () => {
     botoes.forEach(b => { b.tabIndex = nome === "aberto" ? 0 : -1; });
   };
 
+  /* Fotos reais nos cards (buscadas uma vez, quando o banner é aberto) */
+  let fotosCarregadas = false;
+  const carregarFotosCards = () => {
+    if (fotosCarregadas || !window.FotosWiki) return;
+    fotosCarregadas = true;
+    modelos.forEach((m, i) => {
+      if (!m.wiki) return;
+      window.FotosWiki.resolver(m.wiki, 400).then(r => {
+        if (!r) return;
+        const arte = botoes[i].querySelector(".modelo-arte"), im = arte.querySelector(".modelo-foto");
+        m._foto = r;
+        im.addEventListener("load", () => arte.classList.add("com-foto"), { once: true });
+        im.alt = "Foto: " + m.rotulo; im.title = r.credito; im.src = r.url;
+      });
+    });
+  };
+  const anexarCredito = (m) => {
+    if (!m._foto) return;
+    const p = document.createElement("p"); p.className = "painel-credito";
+    const a = document.createElement("a"); a.href = m._foto.pagina; a.target = "_blank"; a.rel = "noopener"; a.textContent = "Foto do cartão: " + m._foto.credito.replace(/^Foto: /, "");
+    p.appendChild(a); painel.appendChild(p);
+  };
+
   const montarPainel = (m) => {
     palco.dataset.painel = m.id === "carros" ? "carros" : "";
-    if (m.id === "carros" && window.EvolucaoCarros) { window.EvolucaoCarros.montar(painel, m); painel.scrollTop = 0; return; }
+    if (m.id === "carros" && window.EvolucaoCarros) { window.EvolucaoCarros.montar(painel, m); anexarCredito(m); painel.scrollTop = 0; return; }
     if (window.EvolucaoCarros) window.EvolucaoCarros.parar();
     painel.style.setProperty("--cor", m.cor);
     painel.innerHTML = `
@@ -244,6 +273,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="painel-marcos">${m.marcos.map(x => `<em>${x}</em>`).join("")}</div>
         <a class="botao principal" href="${m.link[0]}">${m.link[1]}</a>
       </div>`;
+    anexarCredito(m);
     painel.scrollTop = 0;
   };
 
@@ -274,7 +304,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  hub.addEventListener("click", () => { abrirLista(); setTimeout(() => botoes[0].focus({ preventScroll: true }), 80); });
+  hub.addEventListener("click", () => { carregarFotosCards(); abrirLista(); setTimeout(() => botoes[0].focus({ preventScroll: true }), 80); });
   botoes.forEach(b => b.addEventListener("click", () => escolher(b)));
   voltar.addEventListener("click", voltarUmPasso);
   document.addEventListener("keydown", e => {
@@ -393,3 +423,73 @@ document.addEventListener("DOMContentLoaded", () => {
     botoes.forEach(b => alternar(b, abrir));
   });
 });
+
+/* ---------- 5) Toques humanos: saudação e fotos históricas ---------- */
+document.addEventListener("DOMContentLoaded", () => {
+  /* saudação conforme o horário */
+  const sauda = document.getElementById("saudacao");
+  if (sauda) {
+    const h = new Date().getHours();
+    sauda.textContent = h < 5 ? "Boa madrugada!" : h < 12 ? "Bom dia!" : h < 18 ? "Boa tarde!" : "Boa noite!";
+  }
+
+  /* Fotos: 1) arquivo local (mesma pasta), 2) arquivo fixo do Commons, 3) foto principal de um artigo
+     da Wikipédia (só licenças livres). Se nada carregar, mostra a ilustração. */
+  const definirCredito = (figura, r) => {
+    const c = figura.querySelector(".cred"); if (!c || !r || !r.credito) return;
+    c.textContent = "";
+    const a = document.createElement("a"); a.href = r.pagina; a.target = "_blank"; a.rel = "noopener"; a.textContent = r.credito;
+    c.appendChild(a);
+  };
+  document.querySelectorAll(".foto img").forEach(img => {
+    const figura = img.closest(".foto");
+    const fontes = [];
+    if (img.dataset.local) fontes.push(img.dataset.local);
+    if (img.dataset.commons) fontes.push(`https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(img.dataset.commons)}?width=${img.dataset.largura || 720}`);
+    let i = 0, tentouApi = false;
+    const semFoto = () => { figura.classList.remove("com-foto"); figura.classList.add("sem-foto"); };
+    const proxima = () => {
+      if (i < fontes.length) { img.src = fontes[i++]; return; }
+      if (img.dataset.wiki && window.FotosWiki && !tentouApi) {
+        tentouApi = true;
+        window.FotosWiki.resolver(img.dataset.wiki, img.dataset.largura || 720).then(r => {
+          if (!r) { semFoto(); return; }
+          definirCredito(figura, r); img.src = r.url;
+        });
+        return;
+      }
+      semFoto();
+    };
+    img.addEventListener("load", () => { if (img.naturalWidth > 0) { figura.classList.remove("sem-foto"); figura.classList.add("com-foto"); } });
+    img.addEventListener("error", proxima);
+    proxima();
+  });
+});
+
+/* ---------- Fotos da Wikipédia / Wikimedia Commons (somente licenças livres) ---------- */
+(() => {
+  const livre = /public domain|^pd\b|^pd-|cc0|cc by/i;
+  const limpar = (h) => { const d = document.createElement("div"); d.innerHTML = h || ""; return (d.textContent || "").replace(/\s+/g, " ").trim(); };
+  async function viaCommons(nome, largura) {
+    const u = "https://commons.wikimedia.org/w/api.php?action=query&format=json&origin=*&prop=imageinfo&iiprop=url%7Cextmetadata&iiurlwidth=" + largura + "&titles=" + encodeURIComponent("File:" + nome);
+    const r = await fetch(u); if (!r.ok) return null;
+    const j = await r.json(); const pg = j.query && Object.values(j.query.pages)[0];
+    const ii = pg && pg.imageinfo && pg.imageinfo[0]; if (!ii) return null;
+    const meta = ii.extmetadata || {}; const lic = limpar(meta.LicenseShortName && meta.LicenseShortName.value);
+    if (!livre.test(lic)) return null;
+    const autor = limpar(meta.Artist && meta.Artist.value).slice(0, 70) || "autor não informado";
+    return { url: ii.thumburl || ii.url, pagina: ii.descriptionurl, credito: "Foto: " + autor + " • " + lic + " • Wikimedia Commons" };
+  }
+  async function viaWikipedia(ref, largura) {
+    const [lang, titulo] = ref.split(":");
+    const r = await fetch("https://" + lang + ".wikipedia.org/api/rest_v1/page/summary/" + encodeURIComponent(titulo), { headers: { Accept: "application/json" } });
+    if (!r.ok) return null;
+    const j = await r.json(); const src = (j.originalimage && j.originalimage.source) || (j.thumbnail && j.thumbnail.source);
+    if (!src) return null;
+    const m = src.match(/\/commons\/(?:thumb\/)?[0-9a-f]\/[0-9a-f]{2}\/([^\/]+)/);   // só imagens hospedadas no Commons
+    if (!m) return null;
+    return viaCommons(decodeURIComponent(m[1]), largura);
+  }
+  const cache = {};
+  window.FotosWiki = { resolver(ref, largura) { const k = ref + "|" + largura; if (!cache[k]) cache[k] = viaWikipedia(ref, largura).catch(() => null); return cache[k]; } };
+})();

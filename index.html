@@ -1,149 +1,75 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Da Oficina à Robótica — Início</title>
-  <script>try { var t = localStorage.getItem("tema-site"); document.documentElement.dataset.tema = (t === "escuro" || t === "claro" || t === "misto") ? t : "misto" } catch (e) { document.documentElement.dataset.tema = "misto" }</script>
-  <meta name="theme-color" content="#0a0720">
-  <link rel="stylesheet" href="style.css">
-  <script src="carros.js" defer></script>
-  <script src="script.js" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Da Oficina à Robótica — Início</title>
+<script>try{var t=localStorage.getItem("tema-site");document.documentElement.dataset.tema=(t==="claro")?"claro":"escuro"}catch(e){document.documentElement.dataset.tema="escuro"}</script>
+<meta name="theme-color" content="#2a0910">
+<link rel="stylesheet" href="style.css">
+<script src="carros.js" defer></script>
+<script src="script.js" defer></script>
 </head>
-
 <body>
-  <header class="topo">
-    <a class="marca" href="index.html"><span class="marca-icone">◈</span> TRABALHO<span
-        class="marca-claro">.FUTURO</span></a>
-    <nav><a class="selecionado" href="index.html">Início</a><a href="conteudo.html">Linha do tempo</a><a
-        href="cidade.html">Minigame</a></nav>
-    <div class="tema-seletor" role="group" aria-label="Aparência do site"><button type="button" data-tema="escuro"
-        aria-pressed="false" title="Modo escuro completo"><span
-          aria-hidden="true">🌙</span><b>Escuro</b></button><button
-        type="button" data-tema="claro" aria-pressed="false"
-        title="Modo claro completo (melhor para quem enxerga melhor com fundo claro)"><span
-          aria-hidden="true">☀️</span><b>Claro</b></button></div>
-  </header>
-  <main>
-    <section class="hero">
-      <div class="hero-texto">
-        <p class="sobrelinha">ESPECIAL • HISTÓRIA DA TECNOLOGIA</p>
-        <h1>Das oficinas artesanais<br>à <span>robótica industrial.</span></h1>
-        <p class="subtitulo">Uma jornada pelas máquinas, pelas revoluções industriais e pelas pessoas que transformaram
-          o jeito de trabalhar.</p>
-        <div class="acoes"><a class="botao principal" href="conteudo.html">Explorar a linha do tempo
-            <span>↗</span></a><a class="botao discreto" href="cidade.html">🎮 Jogar o minigame</a></div>
-        <div class="mini-info"><span class="ponto-verde"></span> 5 integrantes <i></i> 4 revoluções industriais</div>
-      </div>
-    </section>
-
-    <section class="palco" id="palco" data-estado="inicio"
-      aria-label="Banner interativo: escolha um período da industrialização">
-      <button class="palco-voltar" id="palco-voltar" type="button" hidden>← Voltar</button>
-      <button class="hub" id="hub" type="button" aria-label="Explorar as revoluções industriais">
-        <span class="hub-anel hub-anel-1"></span><span class="hub-anel hub-anel-2"></span>
-        <span class="hub-nucleo"><span class="simbolo">⚙</span><strong>O QUE VOCÊ QUER<br>EXPLORAR?</strong><small>TOQUE
-            PARA ABRIR</small></span>
-      </button>
-      <div class="modelos" id="modelos"></div>
-      <p class="palco-dica" id="palco-dica" hidden>Escolha um período para ver as informações principais</p>
-      <article class="painel" id="painel" aria-live="polite" aria-labelledby="painel-titulo" aria-hidden="true">
-      </article>
-    </section>
-
-    <div class="faixa-ticker revelar" aria-hidden="true">
-      <div class="ticker-trilho"><span>Vapor</span><span>Eletricidade</span><span>Linha de
-          montagem</span><span>Automação</span><span>Computadores</span><span>Robótica</span><span>Internet das
-          coisas</span><span>Inteligência
-          artificial</span><span>Trabalho</span><span>Futuro</span><span>Vapor</span><span>Eletricidade</span><span>Linha
-          de montagem</span><span>Automação</span><span>Computadores</span><span>Robótica</span><span>Internet das
-          coisas</span><span>Inteligência artificial</span><span>Trabalho</span><span>Futuro</span></div>
+<header class="topo">
+  <a class="marca" href="index.html"><span class="marca-icone">◈</span> TRABALHO<span class="marca-claro">.FUTURO</span></a>
+  <nav><a class="selecionado" href="index.html">Início</a><a href="conteudo.html">Linha do tempo</a><a href="cidade.html">Minigame</a></nav><div class="tema-seletor" role="group" aria-label="Aparência do site"><button type="button" data-tema="escuro" aria-pressed="true" title="Modo escuro completo"><span aria-hidden="true">🌙</span><b>Escuro</b></button><button type="button" data-tema="claro" aria-pressed="false" title="Modo claro completo (melhor para quem enxerga melhor com fundo claro)"><span aria-hidden="true">☀️</span><b>Claro</b></button></div>
+</header>
+<main>
+  <section class="hero">
+    <div class="hero-texto">
+      <p class="saudacao"><span aria-hidden="true">👋</span> <b id="saudacao">Olá!</b> Que bom ter você por aqui. Este é um projeto de cinco estudantes curiosos sobre como as máquinas mudaram a vida de quem trabalha.</p>
+      <p class="sobrelinha">ESPECIAL • HISTÓRIA DA TECNOLOGIA</p>
+      <h1>Das oficinas artesanais<br>à <span>robótica industrial.</span></h1>
+      <p class="subtitulo">Uma jornada pelas máquinas, pelas revoluções industriais e pelas pessoas que transformaram o jeito de trabalhar.</p>
+      <div class="acoes"><a class="botao principal" href="conteudo.html">Explorar a linha do tempo <span>↗</span></a><a class="botao discreto" href="cidade.html">🎮 Jogar o minigame</a></div>
+      <div class="mini-info"><span class="ponto-verde"></span> 5 integrantes <i></i> 4 revoluções industriais</div>
     </div>
+  </section>
 
-    <section class="stats" aria-label="O projeto em números">
-      <div class="stat revelar"><b data-alvo="260" data-sufixo="+">260+</b><span>anos de industrialização</span></div>
-      <div class="stat revelar" style="--atraso:90ms"><b data-alvo="4">4</b><span>revoluções industriais</span></div>
-      <div class="stat revelar" style="--atraso:180ms"><b data-alvo="6">6</b><span>períodos para explorar</span></div>
-      <div class="stat revelar" style="--atraso:270ms"><b data-alvo="5">5</b><span>integrantes na equipe</span></div>
-    </section>
-    <section class="bloco-intro">
-      <div>
-        <p class="sobrelinha">SOBRE O PROJETO</p>
-        <h2>A tecnologia muda.<br>O trabalho também.</h2>
-      </div>
-      <p class="texto-longo">Da produção feita à mão até as fábricas conectadas, cada inovação mudou a velocidade de
-        produzir, as habilidades necessárias e a vida dos trabalhadores. Explore a história e reflita sobre os desafios
-        que ainda temos pela frente.</p>
-    </section>
-    <section class="curiosidades">
-      <div class="secao-titulo revelar">
-        <div>
-          <p class="sobrelinha">CURIOSIDADES</p>
-          <h2>Você sabia?</h2>
-        </div><span class="contador">TOQUE PARA VIRAR</span>
-      </div>
-      <div class="flips"><button class="flip revelar" type="button" aria-pressed="false" style="--atraso:0ms"><span
-            class="flip-in"><span class="flip-frente"><small>VOCÊ SABIA? • 01</small><b>Quanto tempo levava para montar
-                o chassi de um Ford Modelo T antes da linha de montagem móvel?</b><em>Toque para revelar
-                ↻</em></span><span class="flip-verso"><small>1913 • FORD</small><b>Mais de 12 horas</b><span
-                class="txt">Com a linha de montagem móvel, esse tempo caiu para cerca de 1h30, e o carro ficou muito
-                mais barato.</span></span></span></button><button class="flip revelar" type="button"
-          aria-pressed="false" style="--atraso:90ms"><span class="flip-in"><span class="flip-frente"><small>VOCÊ SABIA?
-                • 02</small><b>Qual foi o primeiro robô industrial a trabalhar em uma fábrica?</b><em>Toque para revelar
-                ↻</em></span><span class="flip-verso"><small>1961 • ESTADOS UNIDOS</small><b>Unimate</b><span
-                class="txt">Instalado em uma fábrica da General Motors, ele manipulava peças metálicas, uma tarefa
-                pesada e perigosa para pessoas.</span></span></span></button><button class="flip revelar" type="button"
-          aria-pressed="false" style="--atraso:180ms"><span class="flip-in"><span class="flip-frente"><small>VOCÊ SABIA?
-                • 03</small><b>Em que ano foi criada a Companhia Siderúrgica Nacional?</b><em>Toque para revelar
-                ↻</em></span><span class="flip-verso"><small>1941 • VOLTA REDONDA (RJ)</small><b>1941</b><span
-                class="txt">Criada no governo de Getúlio Vargas, a CSN virou símbolo da indústria de base no
-                Brasil.</span></span></span></button><button class="flip revelar" type="button" aria-pressed="false"
-          style="--atraso:270ms"><span class="flip-in"><span class="flip-frente"><small>VOCÊ SABIA? • 04</small><b>Onde
-                e quando surgiu o termo “Indústria 4.0”?</b><em>Toque para revelar ↻</em></span><span
-              class="flip-verso"><small>2011 • ALEMANHA</small><b>Alemanha, 2011</b><span class="txt">O termo foi
-                apresentado na Feira de Hannover e passou a nomear a fábrica conectada e
-                inteligente.</span></span></span></button></div>
-    </section>
+  <section class="palco" id="palco" data-estado="inicio" aria-label="Banner interativo: escolha um período da industrialização">
+    <button class="palco-voltar" id="palco-voltar" type="button" hidden>← Voltar</button>
+    <button class="hub" id="hub" type="button" aria-label="Explorar as revoluções industriais">
+      <span class="hub-anel hub-anel-1"></span><span class="hub-anel hub-anel-2"></span>
+      <span class="hub-nucleo"><span class="simbolo">⚙</span><strong>O QUE VOCÊ QUER<br>EXPLORAR?</strong><small>TOQUE PARA ABRIR</small></span>
+    </button>
+    <div class="modelos" id="modelos"></div>
+    <p class="palco-dica" id="palco-dica" hidden>Escolha um período para ver as informações principais</p>
+    <article class="painel" id="painel" aria-live="polite" aria-labelledby="painel-titulo" aria-hidden="true"></article>
+  </section>
 
-    <section class="selecao">
-      <div class="secao-titulo">
-        <div>
-          <p class="sobrelinha">ESCOLHA SEU CAMINHO</p>
-          <h2>Por onde vamos começar?</h2>
-        </div><span class="contador">01 — 03</span>
-      </div>
-      <div class="cards">
-        <a class="card card-verde" href="conteudo.html"><span class="card-num">01 / CONHECER</span><span
-            class="card-icone">⌁</span>
-          <h3>Viaje pela história</h3>
-          <p>Conheça as etapas da industrialização, das oficinas aos sistemas inteligentes.</p><span
-            class="card-link">Abrir linha do tempo ↗</span>
-        </a>
-        <a class="card card-laranja" href="conteudo.html#brasil"><span class="card-num">02 / CONECTAR</span><span
-            class="card-icone">◉</span>
-          <h3>Olhe para o Brasil</h3>
-          <p>Entenda como a indústria brasileira cresceu e transformou nossas cidades.</p><span class="card-link">Ver o
-            conteúdo ↗</span>
-        </a>
-        <a class="card card-roxo" href="cidade.html"><span class="card-num">03 / JOGAR</span><span
-            class="card-icone">▦</span>
-          <h3>Construa sua cidade</h3>
-          <p>Leve uma cidade das oficinas até a era da IA e descubra como energia, qualificação e meio ambiente se
-            conectam.</p><span class="card-link">Abrir o minigame ↗</span>
-        </a>
-      </div>
-    </section>
-    <section class="equipe-faixa">
-      <div>
-        <p class="sobrelinha">FEITO EM EQUIPE</p>
-        <h2>Uma pesquisa de Diogo, Gregori,<br>Gabriel, Guilherme e Joe.</h2>
-      </div>
-      <div class="iniciais"><span>D</span><span>G</span><span>G</span><span>G</span><span>J</span></div>
-    </section>
-  </main>
-  <footer><span>TRABALHO.FUTURO</span><span>Projeto escolar • Máquinas e relações de trabalho</span><a
-      href="conteudo.html">Continuar explorando ↑</a></footer>
+    <div class="faixa-ticker revelar" aria-hidden="true"><div class="ticker-trilho"><span>Vapor</span><span>Eletricidade</span><span>Linha de montagem</span><span>Automação</span><span>Computadores</span><span>Robótica</span><span>Internet das coisas</span><span>Inteligência artificial</span><span>Trabalho</span><span>Futuro</span><span>Vapor</span><span>Eletricidade</span><span>Linha de montagem</span><span>Automação</span><span>Computadores</span><span>Robótica</span><span>Internet das coisas</span><span>Inteligência artificial</span><span>Trabalho</span><span>Futuro</span></div></div>
+
+  <section class="stats" aria-label="O projeto em números">
+    <div class="stat revelar"><b data-alvo="260" data-sufixo="+">260+</b><span>anos de industrialização</span></div>
+    <div class="stat revelar" style="--atraso:90ms"><b data-alvo="4">4</b><span>revoluções industriais</span></div>
+    <div class="stat revelar" style="--atraso:180ms"><b data-alvo="6">6</b><span>períodos para explorar</span></div>
+    <div class="stat revelar" style="--atraso:270ms"><b data-alvo="5">5</b><span>integrantes na equipe</span></div>
+  </section>
+  <section class="bloco-intro">
+    <div><p class="sobrelinha">SOBRE O PROJETO</p><h2>A tecnologia muda.<br>O trabalho também.</h2></div>
+    <p class="texto-longo">Da produção feita à mão até as fábricas conectadas, cada inovação mudou a velocidade de produzir, as habilidades necessárias e a vida dos trabalhadores. Explore a história e reflita sobre os desafios que ainda temos pela frente.</p>
+  </section>
+  <section class="pessoas">
+    <div class="secao-titulo revelar"><div><p class="sobrelinha">PESSOAS POR TRÁS DAS MÁQUINAS</p><h2>Toda revolução tem rostos.</h2></div><span class="contador">QUATRO HISTÓRIAS</span></div>
+    <p class="pessoas-intro">Antes de datas e invenções, existiram pessoas: crianças, operárias, operários, técnicos. Conheça quatro momentos em que o trabalho mudou a vida de gente de carne e osso.</p>
+    <div class="pessoas-grid"><article class="pessoa" style="--cor:#ff5825"><figure class="foto"><div class="foto-moldura"><img alt="Fotografia de 1909 de uma menina trabalhando como fiandeira em uma fábrica têxtil na Geórgia, nos Estados Unidos" data-local="foto-fiandeira-1909.jpg" data-commons="Lewis Hine, Spinner in Globe Cotton Mill, Augusta, Georgia, 1909.jpg" data-largura="720" loading="lazy" decoding="async" referrerpolicy="no-referrer"><span class="foto-fallback" aria-hidden="true"><svg viewBox="0 0 120 90" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="14" width="104" height="10" rx="3" opacity=".5"/><path d="M20 24v50M52 24v50M84 24v50M104 24v50" opacity=".4"/><circle cx="62" cy="46" r="9"/><path d="M62 55v22M62 62l-14 10M62 62l14 10M52 82h20"/><path d="M8 82h104"/></svg></span></div><figcaption><span class="cred">Foto: Lewis Hine, 1909 • Biblioteca do Congresso dos EUA • Domínio público</span><span class="ilus">Ilustração</span></figcaption></figure><div class="pessoa-texto"><small>SÉCULOS XIX E XX</small><h3>Crianças nas fábricas</h3><p>Em fábricas têxteis e minas, muitas crianças trabalhavam longas jornadas. As fotografias de Lewis Hine, feitas para o Comitê Nacional do Trabalho Infantil dos EUA, ajudaram a convencer o público a apoiar leis de proteção.</p></div></article><article class="pessoa" style="--cor:#ff8a5e"><figure class="foto"><div class="foto-moldura"><img alt="Fotografia de 1913 de operários trabalhando na linha de montagem de automóveis da Ford, em Highland Park, nos Estados Unidos" data-local="foto-linha-ford-1913.jpg" data-commons="A-line1913.jpg" data-largura="720" loading="lazy" decoding="async" referrerpolicy="no-referrer"><span class="foto-fallback" aria-hidden="true"><svg viewBox="0 0 120 90" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 66h108"/><rect x="14" y="52" width="26" height="12" rx="3"/><rect x="52" y="52" width="26" height="12" rx="3"/><rect x="90" y="52" width="22" height="12" rx="3"/><circle cx="26" cy="30" r="7"/><path d="M26 37v14M26 44l12 8"/><circle cx="66" cy="30" r="7"/><path d="M66 37v14M66 44l12 8"/><circle cx="102" cy="32" r="6"/><path d="M102 38v13"/></svg></span></div><figcaption><span class="cred">Foto: Ford Motor Company, 1913 • Domínio público (Wikimedia Commons)</span><span class="ilus">Ilustração</span></figcaption></figure><div class="pessoa-texto"><small>1913–1914</small><h3>A linha de montagem</h3><p>Na fábrica da Ford em Highland Park, cada operário passou a repetir uma etapa do trabalho. O tempo de montagem despencou e, em 1914, a empresa anunciou o pagamento de 5 dólares por dia, um salário acima do comum na época.</p></div></article><article class="pessoa" style="--cor:#b8304a"><figure class="foto"><div class="foto-moldura"><img alt="Imagem histórica da greve geral de 1917 em São Paulo" data-local="foto-greve-1917.jpg" data-wiki="pt:Greve_geral_de_1917" data-largura="720" loading="lazy" decoding="async" referrerpolicy="no-referrer"><span class="foto-fallback" aria-hidden="true"><svg viewBox="0 0 120 90" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 80h108"/><circle cx="26" cy="38" r="7"/><path d="M26 45v22M26 52l-10-6M26 52l10-6M20 80V67h12v13"/><circle cx="60" cy="34" r="8"/><path d="M60 42v26M60 50l-12-12M60 50l12-12M54 80V68h12v12"/><circle cx="94" cy="38" r="7"/><path d="M94 45v22M94 52l-10-6M94 52l10-6M88 80V67h12v13"/><path d="M44 22h32l-4 8H48z" opacity=".6"/></svg></span></div><figcaption><span class="cred">Imagem histórica da greve geral de 1917, São Paulo</span><span class="ilus">Ilustração</span></figcaption></figure><div class="pessoa-texto"><small>1917 • BRASIL</small><h3>A greve que parou São Paulo</h3><p>Em 1917, trabalhadores paulistas, entre eles muitas mulheres e crianças de fábricas têxteis, pararam a cidade na primeira grande greve geral do país, lutando por salários melhores e condições de trabalho mais justas.</p></div></article><article class="pessoa" style="--cor:#f0405a"><figure class="foto"><div class="foto-moldura"><img alt="Pessoas trabalhando com tecnologia nos dias de hoje" data-local="foto-trabalho-hoje.jpg" data-wiki="en:Vocational_education" data-largura="720" loading="lazy" decoding="async" referrerpolicy="no-referrer"><span class="foto-fallback" aria-hidden="true"><svg viewBox="0 0 120 90" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="30" y="38" width="60" height="38" rx="5"/><path d="M20 80h80"/><circle cx="60" cy="20" r="8"/><path d="M60 28v10M46 52h28M46 60h18"/><path d="M96 24q8-10 16 0M100 30q4-5 8 0" opacity=".7"/></svg></span></div><figcaption><span class="cred">Pessoas trabalhando com tecnologia hoje</span><span class="ilus">Ilustração</span></figcaption></figure><div class="pessoa-texto"><small>HOJE</small><h3>Aprender o tempo todo</h3><p>Quem trabalha com automação, dados e tecnologia estuda continuamente. Cursos técnicos, formação profissional e prática no dia a dia ajudam as pessoas a acompanhar as máquinas, e não a competir com elas.</p></div></article></div>
+  </section>
+  <section class="curiosidades">
+    <div class="secao-titulo revelar"><div><p class="sobrelinha">CURIOSIDADES</p><h2>Você sabia?</h2></div><span class="contador">TOQUE PARA VIRAR</span></div>
+    <div class="flips"><button class="flip revelar" type="button" aria-pressed="false" style="--atraso:0ms"><span class="flip-in"><span class="flip-frente"><small>VOCÊ SABIA? • 01</small><b>Quanto tempo levava para montar o chassi de um Ford Modelo T antes da linha de montagem móvel?</b><em>Toque para revelar ↻</em></span><span class="flip-verso"><small>1913 • FORD</small><b>Mais de 12 horas</b><span class="txt">Com a linha de montagem móvel, esse tempo caiu para cerca de 1h30, e o carro ficou muito mais barato.</span></span></span></button><button class="flip revelar" type="button" aria-pressed="false" style="--atraso:90ms"><span class="flip-in"><span class="flip-frente"><small>VOCÊ SABIA? • 02</small><b>Qual foi o primeiro robô industrial a trabalhar em uma fábrica?</b><em>Toque para revelar ↻</em></span><span class="flip-verso"><small>1961 • ESTADOS UNIDOS</small><b>Unimate</b><span class="txt">Instalado em uma fábrica da General Motors, ele manipulava peças metálicas, uma tarefa pesada e perigosa para pessoas.</span></span></span></button><button class="flip revelar" type="button" aria-pressed="false" style="--atraso:180ms"><span class="flip-in"><span class="flip-frente"><small>VOCÊ SABIA? • 03</small><b>Em que ano foi criada a Companhia Siderúrgica Nacional?</b><em>Toque para revelar ↻</em></span><span class="flip-verso"><small>1941 • VOLTA REDONDA (RJ)</small><b>1941</b><span class="txt">Criada no governo de Getúlio Vargas, a CSN virou símbolo da indústria de base no Brasil.</span></span></span></button><button class="flip revelar" type="button" aria-pressed="false" style="--atraso:270ms"><span class="flip-in"><span class="flip-frente"><small>VOCÊ SABIA? • 04</small><b>Onde e quando surgiu o termo “Indústria 4.0”?</b><em>Toque para revelar ↻</em></span><span class="flip-verso"><small>2011 • ALEMANHA</small><b>Alemanha, 2011</b><span class="txt">O termo foi apresentado na Feira de Hannover e passou a nomear a fábrica conectada e inteligente.</span></span></span></button></div>
+  </section>
+
+  <section class="selecao">
+    <div class="secao-titulo"><div><p class="sobrelinha">ESCOLHA SEU CAMINHO</p><h2>Por onde vamos começar?</h2></div><span class="contador">01 — 03</span></div>
+    <div class="cards">
+      <a class="card card-verde" href="conteudo.html"><span class="card-num">01 / CONHECER</span><span class="card-icone">⌁</span><h3>Viaje pela história</h3><p>Conheça as etapas da industrialização, das oficinas aos sistemas inteligentes.</p><span class="card-link">Abrir linha do tempo ↗</span></a>
+      <a class="card card-laranja" href="conteudo.html#brasil"><span class="card-num">02 / CONECTAR</span><span class="card-icone">◉</span><h3>Olhe para o Brasil</h3><p>Entenda como a indústria brasileira cresceu e transformou nossas cidades.</p><span class="card-link">Ver o conteúdo ↗</span></a>
+      <a class="card card-roxo" href="cidade.html"><span class="card-num">03 / JOGAR</span><span class="card-icone">▦</span><h3>Construa sua cidade</h3><p>Leve uma cidade das oficinas até a era da IA e descubra como energia, qualificação e meio ambiente se conectam.</p><span class="card-link">Abrir o minigame ↗</span></a>
+    </div>
+  </section>
+  <section class="equipe-faixa"><div><p class="sobrelinha">FEITO EM EQUIPE</p><h2>Uma pesquisa de Diogo, Gregori,<br>Gabriel, Guilherme e Joe.</h2><p class="agradecimento">Obrigado por visitar! Se algo aqui despertou sua curiosidade, explore a linha do tempo ou construa a sua própria cidade no minigame.</p></div><div class="iniciais"><span>D</span><span>G</span><span>G</span><span>G</span><span>J</span></div></section>
+</main>
+<footer><span>TRABALHO.FUTURO</span><span>Projeto escolar • Máquinas e relações de trabalho</span><a href="conteudo.html">Continuar explorando ↑</a></footer>
 </body>
-
 </html>
